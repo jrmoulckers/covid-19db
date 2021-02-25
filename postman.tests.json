@@ -1,0 +1,1002 @@
+{
+	"info": {
+		"_postman_id": "ec2cf1a7-0661-414f-afa8-23eb26983395",
+		"name": "COVID-19 DB API Tests",
+		"description": "Collection of tests performed on the COVID-19 DB API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "countries",
+			"item": [
+				{
+					"name": "Details about all countries",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1452c003-29b9-436c-85d6-e57be9480919",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for expected number of elements\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.eql(185);",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        pm.expect(Object.keys(jsonData[i]).length).to.be.eq(17);",
+									"    }",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        var countryInstance = jsonData[i];",
+									"        pm.expect(countryInstance.name).to.be.string;",
+									"        pm.expect(countryInstance.codes.alpha3Code).to.be.string;",
+									"        pm.expect(countryInstance.codes.alpha3Code).to.have.length(3);",
+									"        pm.expect(countryInstance.codes.alpha2Code).to.be.string;",
+									"        pm.expect(countryInstance.codes.alpha2Code).to.have.length(2);",
+									"        pm.expect(countryInstance).to.have.property(\"news\");",
+									"        pm.expect(countryInstance).to.have.property(\"capital\");",
+									"        pm.expect(countryInstance).to.have.property(\"location\");",
+									"        pm.expect(countryInstance).to.have.property(\"regionalBlocs\");",
+									"        pm.expect(countryInstance).to.have.property(\"currencies\");",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8dedf99b-ccd8-4194-926e-2e1709fc2424",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/countries",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details about all countries with attributes param",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bcf21029-0bda-4bb8-b990-572edac817de",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for expected number of elements\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.eql(185);",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        pm.expect(Object.keys(jsonData[i]).length).to.be.eq(5);",
+									"    }",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        var countryInstance = jsonData[i];",
+									"        pm.expect(countryInstance.name).to.be.string;",
+									"        pm.expect(countryInstance.codes.alpha3Code).to.be.string;",
+									"        pm.expect(countryInstance.codes.alpha3Code).to.have.length(3);",
+									"        pm.expect(countryInstance.codes.alpha2Code).to.be.string;",
+									"        pm.expect(countryInstance.codes.alpha2Code).to.have.length(2);",
+									"        pm.expect(countryInstance).to.have.property(\"name\");",
+									"        pm.expect(countryInstance).to.have.property(\"codes\");",
+									"        pm.expect(countryInstance).to.have.property(\"location\");",
+									"        pm.expect(countryInstance).to.have.property(\"capital\");",
+									"        pm.expect(countryInstance).to.have.property(\"population\");",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "31e67a20-e3ba-470a-822c-c3428026d3bb",
+								"exec": [
+									"pm.variables.set(\"attributes\", \"capital,location,name,population\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/countries?attributes={{attributes}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"countries"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "{{attributes}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details about all countries with bad attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "52d2bc39-4a7e-408f-b0c0-e1369f49ab31",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(422);",
+									"    pm.response.to.be.json;",
+									"    pm.expect(pm.response.json()).to.have.property(\"error\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "aed28572-c2f2-460f-a4b8-e1be3da85452",
+								"exec": [
+									"pm.variables.set(\"attributes\", \"thisIsAFakeAttribute\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/countries?attributes={{attributes}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"countries"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "{{attributes}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details about a country",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b5d5fc9e-f4cb-4890-92a3-2b50290cdf1b",
+								"exec": [
+									"pm.variables.set(\"identifier\", \"MEX\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "4edfb642-d18b-46c8-ae22-eefb481f5040",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Object.keys(jsonData).length).to.be.eq(17);",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    var countryInstance = jsonData;",
+									"    pm.expect(countryInstance.name).to.be.string;",
+									"    pm.expect(countryInstance.name).to.be.eq(\"Mexico\")",
+									"    pm.expect(countryInstance.codes.alpha3Code).to.be.string;",
+									"    pm.expect(countryInstance.codes.alpha3Code).to.have.length(3);",
+									"    pm.expect(countryInstance.codes.alpha3Code).to.be.eq(\"MEX\")",
+									"    pm.expect(countryInstance.codes.alpha2Code).to.be.string;",
+									"    pm.expect(countryInstance.codes.alpha2Code).to.have.length(2);",
+									"    pm.expect(countryInstance.codes.alpha2Code).to.be.eq(\"MX\")",
+									"    pm.expect(countryInstance).to.have.property(\"news\");",
+									"    pm.expect(countryInstance).to.have.property(\"capital\");",
+									"    pm.expect(countryInstance).to.have.property(\"location\");",
+									"    pm.expect(countryInstance).to.have.property(\"regionalBlocs\");",
+									"    pm.expect(countryInstance).to.have.property(\"currencies\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/countries/{{identifier}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"countries",
+								"{{identifier}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details about a country with attributes param",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "845868bf-a8b7-4437-91fd-330154b6f81b",
+								"exec": [
+									"pm.variables.set(\"identifier\", \"MEX\");",
+									"pm.variables.set(\"attributes\", \"location,capital,area\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "9d168ae7-b6cc-42ee-ad00-3abc59965b3e",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Object.keys(jsonData).length).to.be.eq(5);",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    var countryInstance = jsonData;",
+									"    pm.expect(countryInstance.name).to.be.string;",
+									"    pm.expect(countryInstance.name).to.be.eq(\"Mexico\")",
+									"    pm.expect(countryInstance.codes.alpha3Code).to.be.string;",
+									"    pm.expect(countryInstance.codes.alpha3Code).to.have.length(3);",
+									"    pm.expect(countryInstance.codes.alpha3Code).to.be.eq(\"MEX\")",
+									"    pm.expect(countryInstance.codes.alpha2Code).to.be.string;",
+									"    pm.expect(countryInstance.codes.alpha2Code).to.have.length(2);",
+									"    pm.expect(countryInstance.codes.alpha2Code).to.be.eq(\"MX\")",
+									"    pm.expect(countryInstance).to.have.property(\"area\");",
+									"    pm.expect(countryInstance).to.have.property(\"capital\");",
+									"    pm.expect(countryInstance).to.have.property(\"location\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/countries/{{identifier}}?attributes={{attributes}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"countries",
+								"{{identifier}}"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "{{attributes}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details about a country with bad identifier",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "afb8e018-08fd-4777-9053-713ef378353e",
+								"exec": [
+									"pm.variables.set(\"identifier\", \"This is a fake identifier\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "78f68ae6-ad2e-433f-80cc-743dcee52735",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(422);",
+									"    pm.response.to.be.json;",
+									"    pm.expect(pm.response.json()).to.have.property(\"error\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/countries/{{identifier}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"countries",
+								"{{identifier}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details about a country with bad attributes",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "75426976-1cb6-4f5c-9f4f-b8aecce585cf",
+								"exec": [
+									"pm.variables.set(\"identifier\", \"MEX\");",
+									"pm.variables.set(\"attributes\", \"This is a fake attribute param\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "0fd2654e-2f1e-4440-9dbf-e5c203d47705",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(422);",
+									"    pm.response.to.be.json;",
+									"    pm.expect(pm.response.json()).to.have.property(\"error\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/countries/{{identifier}}?attributes={{attributes}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"countries",
+								"{{identifier}}"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "{{attributes}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Related to countries",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "case-statistics",
+			"item": [
+				{
+					"name": "Retrieve all instances of case statistics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "309f216a-3cf8-4e98-b827-f37ce113d352",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for expected number of elements\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.eql(185);",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        pm.expect(Object.keys(jsonData[i]).length).to.be.eq(11);",
+									"    }",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        var caseStatsInstance = jsonData[i];",
+									"        pm.expect(caseStatsInstance.country.name).to.be.string;",
+									"        pm.expect(caseStatsInstance.country.codes.alpha3Code).to.be.string;",
+									"        pm.expect(caseStatsInstance.country.codes.alpha3Code).to.have.length(3);",
+									"        pm.expect(caseStatsInstance.country.codes.alpha2Code).to.be.string;",
+									"        pm.expect(caseStatsInstance.country.codes.alpha2Code).to.have.length(2);",
+									"        pm.expect(caseStatsInstance).to.have.property(\"totals\");",
+									"        pm.expect(caseStatsInstance).to.have.property(\"new\");",
+									"        pm.expect(caseStatsInstance).to.have.property(\"history\");",
+									"        pm.expect(caseStatsInstance).to.have.property(\"derivativeNew\");",
+									"        pm.expect(caseStatsInstance).to.have.property(\"percentages\");",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/case-statistics",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"case-statistics"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "<string>,<string>",
+									"description": "Describes the fields to include in the response (other than the required ones). Delimit the fields with a comma if there are multiple. If this parameter is omitted, all fields will be returned.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve one instance of case statistics",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1b66d6cd-028d-4ed2-b3f6-8a66d75fb476",
+								"exec": [
+									"pm.variables.set(\"identifier\", \"USA\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2743a61-623c-4c71-b551-1bce07c04ff5",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Object.keys(jsonData).length).to.be.eq(11);",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    var caseStatsInstance = jsonData;",
+									"    pm.expect(caseStatsInstance.country.name).to.be.string;",
+									"    pm.expect(caseStatsInstance.country.name).to.be.eq(\"United States\")",
+									"    pm.expect(caseStatsInstance.country.codes.alpha3Code).to.be.string;",
+									"    pm.expect(caseStatsInstance.country.codes.alpha3Code).to.have.length(3);",
+									"    pm.expect(caseStatsInstance.country.codes.alpha3Code).to.be.eq(\"USA\")",
+									"    pm.expect(caseStatsInstance.country.codes.alpha2Code).to.be.string;",
+									"    pm.expect(caseStatsInstance.country.codes.alpha2Code).to.have.length(2);",
+									"    pm.expect(caseStatsInstance.country.codes.alpha2Code).to.be.eq(\"US\")",
+									"    pm.expect(caseStatsInstance).to.have.property(\"totals\");",
+									"    pm.expect(caseStatsInstance).to.have.property(\"new\");",
+									"    pm.expect(caseStatsInstance).to.have.property(\"smoothedNew\");",
+									"    pm.expect(caseStatsInstance).to.have.property(\"history\");",
+									"    pm.expect(caseStatsInstance).to.have.property(\"location\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/case-statistics/{{identifier}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"case-statistics",
+								"{{identifier}}"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "<string>,<string>",
+									"description": "Describes the fields to include in the response (other than the required ones). Delimit the fields with a comma if there are multiple. If this parameter is omitted, all fields will be returned.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Related to COVID-19 case statistics data",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "risk-factor-statistics",
+			"item": [
+				{
+					"name": "Retrieve all instances of risk factor statistics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38952fa7-be12-4d33-9b89-4617558b5693",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for expected number of elements\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.eql(185);",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        pm.expect(Object.keys(jsonData[i]).length).to.be.eq(18);",
+									"    }",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        var caseStatsInstance = jsonData[i];",
+									"        pm.expect(caseStatsInstance.country.name).to.be.string;",
+									"        pm.expect(caseStatsInstance.country.codes.alpha3Code).to.be.string;",
+									"        pm.expect(caseStatsInstance.country.codes.alpha3Code).to.have.length(3);",
+									"        pm.expect(caseStatsInstance.country.codes.alpha2Code).to.be.string;",
+									"        pm.expect(caseStatsInstance.country.codes.alpha2Code).to.have.length(2);",
+									"        pm.expect(caseStatsInstance).to.have.property(\"aged65Older\");",
+									"        pm.expect(caseStatsInstance).to.have.property(\"medianAge\");",
+									"        pm.expect(caseStatsInstance).to.have.property(\"gdpPerCapita\");",
+									"        pm.expect(caseStatsInstance).to.have.property(\"lifeExpectancy\");",
+									"        pm.expect(caseStatsInstance).to.have.property(\"diabetesPrevalence\");",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/risk-factor-statistics",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"risk-factor-statistics"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "<string>,<string>",
+									"description": "Describes the fields to include in the response (other than the required ones). Delimit the fields with a comma if there are multiple. If this parameter is omitted, all fields will be returned.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve one instance of risk factor statistics",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46bd6644-0f8a-4dc8-91a8-eefd5391d4db",
+								"exec": [
+									"pm.variables.set(\"identifier\", \"GBR\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ac508c4-1147-4eaa-8cd0-698f2b399db9",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Object.keys(jsonData).length).to.be.eq(18);",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    var rfStatsInstance = jsonData;",
+									"    pm.expect(rfStatsInstance.country.name).to.be.string;",
+									"    pm.expect(rfStatsInstance.country.name).to.be.eq(\"United Kingdom\")",
+									"    pm.expect(rfStatsInstance.country.codes.alpha3Code).to.be.string;",
+									"    pm.expect(rfStatsInstance.country.codes.alpha3Code).to.have.length(3);",
+									"    pm.expect(rfStatsInstance.country.codes.alpha3Code).to.be.eq(\"GBR\")",
+									"    pm.expect(rfStatsInstance.country.codes.alpha2Code).to.be.string;",
+									"    pm.expect(rfStatsInstance.country.codes.alpha2Code).to.have.length(2);",
+									"    pm.expect(rfStatsInstance.country.codes.alpha2Code).to.be.eq(\"GB\")",
+									"    pm.expect(rfStatsInstance).to.have.property(\"aged65Older\");",
+									"    pm.expect(rfStatsInstance).to.have.property(\"gini\");",
+									"    pm.expect(rfStatsInstance).to.have.property(\"lifeExpectancy\");",
+									"    pm.expect(rfStatsInstance).to.have.property(\"cardiovascDeathRate\");",
+									"    pm.expect(rfStatsInstance).to.have.property(\"handwashingFacilities\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/risk-factor-statistics/{{identifier}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"risk-factor-statistics",
+								"{{identifier}}"
+							],
+							"query": [
+								{
+									"key": "attributes",
+									"value": "<string>,<string>",
+									"description": "Describes the fields to include in the response (other than the required ones). Delimit the fields with a comma if there are multiple. If this parameter is omitted, all fields will be returned.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Related to risk factor statistics data",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "global-news",
+			"item": [
+				{
+					"name": "Retrieve all global news",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "42b5126d-95ac-46d8-8a2c-be63ac183c1b",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for expected number of elements\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.be.gte(3);",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        pm.expect(Object.keys(jsonData[i]).length).to.be.eq(8);",
+									"    }",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        var article = jsonData[i];",
+									"        pm.expect(article).to.have.property(\"source\");",
+									"        pm.expect(article).to.have.property(\"author\");",
+									"        pm.expect(article).to.have.property(\"description\");",
+									"        pm.expect(article).to.have.property(\"urlToImage\");",
+									"        pm.expect(article).to.have.property(\"content\");",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/global-news",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"global-news"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Global news relating to the COVID-19 pandemic",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "global-stats",
+			"item": [
+				{
+					"name": "Retrieve global statistics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "286ae806-d8c9-4903-b344-beb3b9dc1bad",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Object.keys(jsonData).length).to.be.eq(2);",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property(\"totals\");",
+									"    pm.expect(jsonData.totals).to.have.property(\"cases\");",
+									"    pm.expect(jsonData.totals).to.have.property(\"deaths\");",
+									"    pm.expect(jsonData.totals).to.have.property(\"recovered\");",
+									"    pm.expect(jsonData.totals).to.have.property(\"active\");",
+									"    pm.expect(jsonData).to.have.property(\"new\");",
+									"    pm.expect(jsonData.new).to.have.property(\"cases\");",
+									"    pm.expect(jsonData.new).to.have.property(\"deaths\");",
+									"    pm.expect(jsonData.new).to.have.property(\"recovered\");",
+									"    pm.expect(jsonData.new).to.have.property(\"active\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/global-stats",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"global-stats"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Global statistics for the COVID-19 pandemic",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "Perform a search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "022393c8-c413-4184-934d-5e1e3e4c931a",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Check for expected number of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.be.eq(3);",
+									"});",
+									"",
+									"pm.test(\"Check for correct number of included attributes\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        pm.expect(Object.keys(jsonData[i]).length).to.be.eq(2);",
+									"    }",
+									"});",
+									"",
+									"pm.test(\"Validate properties of elements\", function(){",
+									"    var jsonData = pm.response.json();",
+									"    for(var i = 0; i < jsonData.length; ++i){",
+									"        var result = jsonData[i];",
+									"        pm.expect(result).to.have.property(\"name\");",
+									"        pm.expect(result).to.have.property(\"codes\");",
+									"        pm.expect(result.codes).to.have.property(\"alpha3Code\");",
+									"        pm.expect(result.codes).to.have.property(\"alpha2Code\");",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/search?query=United",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "United"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Perform a search no query",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cfed98e9-4d0c-42ba-8964-2f838528e476",
+								"exec": [
+									"pm.test(\"Expected status and response type\", function(){",
+									"    pm.response.to.have.status(422);",
+									"    pm.response.to.be.json;",
+									"    pm.expect(pm.response.json()).to.have.property(\"error\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/search",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Tests for the search endpoint.",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "13f5a05c-9fb4-48a3-96f8-624dcb94233a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3aded8c8-b2bf-4547-99e5-abed1491a737",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

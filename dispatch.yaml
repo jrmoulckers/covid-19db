@@ -1,0 +1,5 @@
+dispatch:
+  - url: "api.covid19db.net/*"
+    service: api
+  - url: "covid19db.net/"
+    service: default

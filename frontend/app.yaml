@@ -1,0 +1,46 @@
+# https://cloud.google.com/appengine/docs/standard/python/config/appref
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  - url: /
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /home
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /about
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /vis
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /provider-vis
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /countries(.*)
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /case-statistics(.*)
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /global-news(.*)
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /risk-factor-statistics(.*)
+    static_files: build/index.html
+    secure: always
+    upload: build/index.html
+  - url: /(.*)
+    static_files: build/\1
+    secure: always
+    upload: build/(.*)

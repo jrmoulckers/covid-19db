@@ -1,0 +1,21 @@
+group Browser
+ User->covid19db.net : /<site page>
+ User->api.covid19.net : /<api endpoint>
+end
+
+covid19db.net->GCP : UI HTTPS Requests 
+api.covid19.net->GCP : REST API HTTPS Requests 
+
+group Google Cloud Platform
+ GCP->"AppEngine Frontend Service" : Frontend Dispatch
+ GCP->"AppEngine Backend Service" : Backend Dispatch
+ "AppEngine Frontend Service"->"Static React Build"
+ "AppEngine Backend Service"->Flask
+ group React
+  "Static React Build"->"Static Assets" : Images, stylesheets, 3rd Party JS libraries
+  "Static React Build"->"Webpacked Code" : JS Production Bundle
+ end
+ group Flask
+  Flask->PostgreSQL : Database lookup
+ end
+end

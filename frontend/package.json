@@ -1,0 +1,83 @@
+{
+  "name": "covid19db",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.12.1",
+    "@material-ui/core": "^4.11.0",
+    "@nivo/bar": "0.62.0",
+    "@nivo/circle-packing": "0.62.0",
+    "@nivo/core": "0.62.0",
+    "@nivo/line": "^0.62.0",
+    "@nivo/pie": "^0.62.0",
+    "@nivo/scatterplot": "0.62.0",
+    "@nivo/tooltip": "0.62.0",
+    "@nivo/treemap": "0.62.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^7.1.2",
+    "antd": "^4.6.6",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "chromedriver": "^86.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "mapbox-gl": "^1.12.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.3.0",
+    "react-collapse": "^5.1.0",
+    "react-dom": "^16.13.1",
+    "react-highlight-words": "^0.16.0",
+    "react-highlighter": "^0.4.3",
+    "react-router": "^5.2.0",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-search": "^2.1.1",
+    "selenium": "^2.20.0",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "scripts": {
+    "react": "react-scripts start",
+    "flask": "cd ../backend && python main.py",
+    "snap": "jest --updateSnapshot",
+    "branches": "git branch -vv -a",
+    "log": "git log",
+    "deploy:site": "gcloud app deploy",
+    "deploy:api": "pushd ../backend && gcloud app deploy && popd",
+    "gcp": "gcloud app browse",
+    "build": "react-scripts build",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "react-test-renderer": "^16.14.0",
+    "typescript": "^4.0.3",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup.js"
+    ]
+  }
+}

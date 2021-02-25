@@ -1,0 +1,61 @@
+.Back-link {
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.Case-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+  align-items: start;
+  justify-content: start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#page-title {
+  font-weight: 800;
+  font-size: 1.25em;
+}
+
+#title-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#subtitle {
+  font-weight: 800;
+  font-size: 20px;
+  text-align: left;
+}
+
+.title {
+  font-weight: 500;
+  font-size: medium;
+  color: #818181;
+}
+
+.data {
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.gen-stats-description {
+  font-weight: 500;
+  font-size: small;
+  color: #818181;
+}
+
+#capital-image {
+  width: 100%;
+  max-width: 30vw;
+  height: auto;
+}

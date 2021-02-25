@@ -1,0 +1,40 @@
+.country-page-header {
+  background-color: #323776;
+  justify-content: center;
+  display: flex;
+}
+
+.country-page-header-content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 75vw;
+}
+.page-title {
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: white;
+}
+.page-description {
+  color: white;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.compare-title {
+  font-weight: 800;
+  font-size: 1.4em;
+  color: white;
+  text-align: left;
+}
+
+.compare-group {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}

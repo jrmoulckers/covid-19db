@@ -1,0 +1,338 @@
+[
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "US",
+                "alpha3Code": "USA"
+            },
+            "name": "United States of America"
+        },
+        "location": {
+            "lat": 38.0,
+            "lng": -97.0
+        },
+        "populationDensity": 92.900,
+        "medianAge": 38.3,
+        "aged65Older": 15.413,
+        "aged70Older": 9.732,
+        "gdpPerCapita": 54225.446,
+        "gini": 48.0,
+        "extremePovertyRate": 1.2,
+        "cardiovascDeathRate": 151.089,
+        "diabetesPrevalence": 10.79,
+        "femaleSmokers": 19.1,
+        "maleSmokers": 24.6,
+        "hospitalBedsPerThousand": 2.77,
+        "lifeExpectancy": 78.86,
+        "humanDevelopmentIndex": 0.924,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "GB",
+                "alpha3Code": "GBR"
+            },
+            "name": "United Kingdom of Great Britain and Northern Ireland"
+        },
+        "location": {
+            "lat": 54.0,
+            "lng": -2.0
+        },
+        "populationDensity": 272.898,
+        "medianAge": 40.8,
+        "aged65Older": 18.517,
+        "aged70Older": 12.527,
+        "gdpPerCapita": 39753.244,
+        "gini": 34.0,
+        "extremePovertyRate": 0.2,
+        "cardiovascDeathRate": 122.137,
+        "diabetesPrevalence": 4.28,
+        "femaleSmokers": 20.0,
+        "maleSmokers": 24.7,
+        "hospitalBedsPerThousand": 2.54,
+        "lifeExpectancy": 81.32,
+        "humanDevelopmentIndex": 0.922,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "MX",
+                "alpha3Code": "MEX"
+            },
+            "name": "Mexico"
+        },
+        "location": {
+            "lat": 23.0,
+            "lng": -102.0
+        },
+        "populationDensity": 66.444,
+        "medianAge": 29.3,
+        "aged65Older": 6.857,
+        "aged70Older": 4.321,
+        "gdpPerCapita": 17336.469,
+        "gini": 47.0,
+        "extremePovertyRate": 2.5,
+        "cardiovascDeathRate": 152.783,
+        "diabetesPrevalence": 13.06,
+        "femaleSmokers": 6.9,
+        "maleSmokers": 21.4,
+        "hospitalBedsPerThousand": 1.38,
+        "lifeExpectancy": 75.05,
+        "humanDevelopmentIndex": 0.774,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "US",
+                "alpha3Code": "USA1"
+            },
+            "name": "United States of America"
+        },
+        "location": {
+            "lat": 38.0,
+            "lng": -97.0
+        },
+        "populationDensity": 92.900,
+        "medianAge": 38.3,
+        "aged65Older": 15.413,
+        "aged70Older": 9.732,
+        "gdpPerCapita": 54225.446,
+        "gini": 48.0,
+        "extremePovertyRate": 1.2,
+        "cardiovascDeathRate": 151.089,
+        "diabetesPrevalence": 10.79,
+        "femaleSmokers": 19.1,
+        "maleSmokers": 24.6,
+        "hospitalBedsPerThousand": 2.77,
+        "lifeExpectancy": 78.86,
+        "humanDevelopmentIndex": 0.924,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "GB",
+                "alpha3Code": "GBR1"
+            },
+            "name": "United Kingdom of Great Britain and Northern Ireland"
+        },
+        "location": {
+            "lat": 54.0,
+            "lng": -2.0
+        },
+        "populationDensity": 272.898,
+        "medianAge": 40.8,
+        "aged65Older": 18.517,
+        "aged70Older": 12.527,
+        "gdpPerCapita": 39753.244,
+        "gini": 34.0,
+        "extremePovertyRate": 0.2,
+        "cardiovascDeathRate": 122.137,
+        "diabetesPrevalence": 4.28,
+        "femaleSmokers": 20.0,
+        "maleSmokers": 24.7,
+        "hospitalBedsPerThousand": 2.54,
+        "lifeExpectancy": 81.32,
+        "humanDevelopmentIndex": 0.922,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "MX",
+                "alpha3Code": "MEX1"
+            },
+            "name": "Mexico"
+        },
+        "location": {
+            "lat": 23.0,
+            "lng": -102.0
+        },
+        "populationDensity": 66.444,
+        "medianAge": 29.3,
+        "aged65Older": 6.857,
+        "aged70Older": 4.321,
+        "gdpPerCapita": 17336.469,
+        "gini": 47.0,
+        "extremePovertyRate": 2.5,
+        "cardiovascDeathRate": 152.783,
+        "diabetesPrevalence": 13.06,
+        "femaleSmokers": 6.9,
+        "maleSmokers": 21.4,
+        "hospitalBedsPerThousand": 1.38,
+        "lifeExpectancy": 75.05,
+        "humanDevelopmentIndex": 0.774,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "US",
+                "alpha3Code": "USA2"
+            },
+            "name": "United States of America"
+        },
+        "location": {
+            "lat": 38.0,
+            "lng": -97.0
+        },
+        "populationDensity": 92.900,
+        "medianAge": 38.3,
+        "aged65Older": 15.413,
+        "aged70Older": 9.732,
+        "gdpPerCapita": 54225.446,
+        "gini": 48.0,
+        "extremePovertyRate": 1.2,
+        "cardiovascDeathRate": 151.089,
+        "diabetesPrevalence": 10.79,
+        "femaleSmokers": 19.1,
+        "maleSmokers": 24.6,
+        "hospitalBedsPerThousand": 2.77,
+        "lifeExpectancy": 78.86,
+        "humanDevelopmentIndex": 0.924,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "GB",
+                "alpha3Code": "GBR2"
+            },
+            "name": "United Kingdom of Great Britain and Northern Ireland"
+        },
+        "location": {
+            "lat": 54.0,
+            "lng": -2.0
+        },
+        "populationDensity": 272.898,
+        "medianAge": 40.8,
+        "aged65Older": 18.517,
+        "aged70Older": 12.527,
+        "gdpPerCapita": 39753.244,
+        "gini": 34.0,
+        "extremePovertyRate": 0.2,
+        "cardiovascDeathRate": 122.137,
+        "diabetesPrevalence": 4.28,
+        "femaleSmokers": 20.0,
+        "maleSmokers": 24.7,
+        "hospitalBedsPerThousand": 2.54,
+        "lifeExpectancy": 81.32,
+        "humanDevelopmentIndex": 0.922,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "MX",
+                "alpha3Code": "MEX2"
+            },
+            "name": "Mexico"
+        },
+        "location": {
+            "lat": 23.0,
+            "lng": -102.0
+        },
+        "populationDensity": 66.444,
+        "medianAge": 29.3,
+        "aged65Older": 6.857,
+        "aged70Older": 4.321,
+        "gdpPerCapita": 17336.469,
+        "gini": 47.0,
+        "extremePovertyRate": 2.5,
+        "cardiovascDeathRate": 152.783,
+        "diabetesPrevalence": 13.06,
+        "femaleSmokers": 6.9,
+        "maleSmokers": 21.4,
+        "hospitalBedsPerThousand": 1.38,
+        "lifeExpectancy": 75.05,
+        "humanDevelopmentIndex": 0.774,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "US",
+                "alpha3Code": "USA3"
+            },
+            "name": "United States of America"
+        },
+        "location": {
+            "lat": 38.0,
+            "lng": -97.0
+        },
+        "populationDensity": 92.900,
+        "medianAge": 38.3,
+        "aged65Older": 15.413,
+        "aged70Older": 9.732,
+        "gdpPerCapita": 54225.446,
+        "gini": 48.0,
+        "extremePovertyRate": 1.2,
+        "cardiovascDeathRate": 151.089,
+        "diabetesPrevalence": 10.79,
+        "femaleSmokers": 19.1,
+        "maleSmokers": 24.6,
+        "hospitalBedsPerThousand": 2.77,
+        "lifeExpectancy": 78.86,
+        "humanDevelopmentIndex": 0.924,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "GB",
+                "alpha3Code": "GBR3"
+            },
+            "name": "United Kingdom of Great Britain and Northern Ireland"
+        },
+        "location": {
+            "lat": 54.0,
+            "lng": -2.0
+        },
+        "populationDensity": 272.898,
+        "medianAge": 40.8,
+        "aged65Older": 18.517,
+        "aged70Older": 12.527,
+        "gdpPerCapita": 39753.244,
+        "gini": 34.0,
+        "extremePovertyRate": 0.2,
+        "cardiovascDeathRate": 122.137,
+        "diabetesPrevalence": 4.28,
+        "femaleSmokers": 20.0,
+        "maleSmokers": 24.7,
+        "hospitalBedsPerThousand": 2.54,
+        "lifeExpectancy": 81.32,
+        "humanDevelopmentIndex": 0.922,
+        "handwashingFacilities": 87.847
+    },
+    {
+        "country": {
+            "codes": {
+                "alpha2Code": "MX",
+                "alpha3Code": "MEX3"
+            },
+            "name": "Mexico"
+        },
+        "location": {
+            "lat": 23.0,
+            "lng": -102.0
+        },
+        "populationDensity": 66.444,
+        "medianAge": 29.3,
+        "aged65Older": 6.857,
+        "aged70Older": 4.321,
+        "gdpPerCapita": 17336.469,
+        "gini": 47.0,
+        "extremePovertyRate": 2.5,
+        "cardiovascDeathRate": 152.783,
+        "diabetesPrevalence": 13.06,
+        "femaleSmokers": 6.9,
+        "maleSmokers": 21.4,
+        "hospitalBedsPerThousand": 1.38,
+        "lifeExpectancy": 75.05,
+        "humanDevelopmentIndex": 0.774,
+        "handwashingFacilities": 87.847
+    }
+]

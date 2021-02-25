@@ -1,0 +1,28 @@
+{
+    "country": {
+        "codes": {
+            "alpha2Code": "AC",
+            "alpha3Code": "ACC"
+        },
+        "name": "All Combined Countries"
+    },
+    "location": {
+        "lat": 0,
+        "lng": 0
+    },
+    "populationDensity": 124.983,
+    "medianAge": 36.133,
+    "aged65Older": 13.596,
+    "aged70Older": 8.86,
+    "gdpPerCapita": 37105.053,
+    "gini": 43,
+    "extremePovertyRate": 1.3,
+    "cardiovascDeathRate": 142.003,
+    "diabetesPrevalence": 9.377,
+    "femaleSmokers": 15.333,
+    "maleSmokers": 23.567,
+    "hospitalBedsPerThousand": 2.23,
+    "lifeExpectancy": 78.41,
+    "humanDevelopmentIndex": 0.873,
+    "handwashingFacilities": 87.847
+}

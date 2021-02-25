@@ -1,0 +1,26 @@
+.about-page-header {
+  background-color: #323776;
+  justify-content: center;
+  display: flex;
+}
+
+.about-page-header-content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 75vw;
+}
+.about-page-title {
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: white;
+}
+.about-page-description {
+  color: white;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}

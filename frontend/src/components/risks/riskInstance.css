@@ -1,0 +1,76 @@
+.Back-link {
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.risk-header {
+  background-color: #ffffff;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+  align-items: start;
+  justify-content: start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#page-title{
+  font-weight: 800;
+  font-size: 1.25em;
+}
+
+#demogr-factor-title-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 300px;
+}
+
+#subtitle {
+  font-weight: 800;
+  font-size: 20px;
+  text-align: left;
+}
+
+.demogr-factor, .health-factor, .big-stat {
+  flex: 1;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-right: 50px;
+  padding: 10px;
+  width: 275px;
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+.demogr-factor-title, .health-factor-title, .big-stat-title {
+  font-weight: 500;
+  font-size: medium;
+  color: #818181;
+}
+
+.big-stat-suffix, .demogr-factor-suffix, .health-factor-suffix, .compare-avg {
+  font-weight: 500;
+  font-size: medium;
+  color: #818181;
+  display: inline;
+}
+
+.demogr-factor-data, .health-factor-data, .big-stat-data {
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.demogr-factor-description {
+  font-weight: 500;
+  font-size: small;
+  color: #818181;
+}

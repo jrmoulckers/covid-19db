@@ -1,0 +1,1490 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Components Case: Case Response Line 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`Render Components Case: Gen Stats 1`] = `
+<div
+  className="new-stats"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <h2
+    className="new-stats-title"
+  />
+  <h2
+    className="new-stats-data"
+  >
+    %
+  </h2>
+</div>
+`;
+
+exports[`Render Components Case: New Stats 1`] = `
+<div
+  className="new-stats"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <h2
+    className="new-stats-title"
+  />
+  <h2
+    className="new-stats-data"
+  />
+  <h2
+    className="new-stats-title"
+  >
+     from yesterday
+  </h2>
+</div>
+`;
+
+exports[`Render Components Case: Totals 1`] = `
+<div
+  className="case-totals"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <h2
+    className="case-totals-title"
+  />
+  <h2
+    className="case-totals-data"
+  />
+</div>
+`;
+
+exports[`Render Components Country: All News 1`] = `null`;
+
+exports[`Render Components Country: General Info 1`] = `
+<div
+  className="new-stats"
+>
+  <h2
+    className="title"
+    style={
+      Object {
+        "color": "grey",
+        "fontSize": "medium",
+      }
+    }
+  />
+  <h2
+    className="data"
+  />
+</div>
+`;
+
+exports[`Render Components Country: News 1`] = `
+<div
+  className="news"
+>
+  <a
+    className="title"
+  />
+  <h2
+    className="source"
+  >
+    (
+    )
+  </h2>
+</div>
+`;
+
+exports[`Render Pages About 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="about-page-header"
+  >
+    <div
+      className="about-page-header-content"
+    >
+      <h1
+        className="about-page-title"
+      >
+        About
+      </h1>
+      <div
+        className="about-page-description"
+      >
+        Our COVID-19 Database site allows users to gather quick statistics on the coronavirus in terms of country, cases, and potential risks. This website is intended for those susceptible to contracting the virus (that means you!), and our aim is to keep users informed about the coronavirus. Integrating disparate data sets allows us to form a broad overview of how countries have handled the COVID-19 pandemic, present some of the unique risks each country's population faces, and possibly indicate the near future trajectory of the pandemic.
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div
+    style={
+      Object {
+        "margin": "18px",
+      }
+    }
+  >
+    <h4>
+      Project Info
+    </h4>
+    <br />
+    <div
+      className="row"
+    >
+      <div
+        className="col-sm-4"
+      >
+        <div
+          className="list-group"
+          onKeyDown={[Function]}
+          role="tablist"
+        >
+          <a
+            aria-selected={true}
+            className="list-group-item list-group-item-action active"
+            data-rb-event-key="#tools"
+            disabled={false}
+            href="#tools"
+            onClick={[Function]}
+            role="tab"
+          >
+            Tools
+          </a>
+          <a
+            aria-selected={false}
+            className="list-group-item list-group-item-action"
+            data-rb-event-key="#data"
+            disabled={false}
+            href="#data"
+            onClick={[Function]}
+            role="tab"
+            tabIndex={-1}
+          >
+            Data
+          </a>
+        </div>
+      </div>
+      <div
+        className="col-sm-8"
+      >
+        <div
+          className="tab-content"
+        >
+          <div
+            aria-hidden={false}
+            aria-labelledby={null}
+            className="fade tab-pane active show"
+            id={null}
+            role="tabpanel"
+            style={
+              Object {
+                "textAlign": "left",
+              }
+            }
+          >
+            <ul
+              className="list-unstyled"
+            >
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://reactjs.org/"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/react.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  React
+                </a>
+                 
+                - 
+                For creating interactive UIs in JSX.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://ant.design/"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/antd.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  Antd
+                </a>
+                 
+                - 
+                A React UI library for clean composable components.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://nivo.rocks/"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/nivo.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  Nivo
+                </a>
+                 
+                - 
+                A React UI library for animated and interactive charts.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://jestjs.io/"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/jest.jpg"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  Jest
+                </a>
+                 
+                - 
+                A JavaScript testing framework.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://github.com/axios/axios"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/axios.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  Axios
+                </a>
+                 
+                - 
+                For doing browser-side HTTP requests to our API.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://flask.palletsprojects.com/en/1.1.x/"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/flask.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  Flask
+                </a>
+                 
+                - 
+                For serving our API data in a RESTful way.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://www.sqlalchemy.org/"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/sqla.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  SQLAlchemy
+                </a>
+                 
+                - 
+                A Python ORM for creating and interacting with our SQL models.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://cloud.google.com"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/gcp.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  GCP
+                </a>
+                 
+                - 
+                For hosting our site on the cloud.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://www.postman.com"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/postman.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  Postman
+                </a>
+                 
+                - 
+                For building and testing API's.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://gitlab.com/explore"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/gitlab.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  GitLab
+                </a>
+                 
+                - 
+                DevOps tool for issue-tracking, continuous integration, testing, and deployment.
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://www.selenium.dev/"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/selenium.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  Selenium
+                </a>
+                 
+                - 
+                For end-to-end automated GUI testing.
+              </li>
+            </ul>
+          </div>
+          <div
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="fade tab-pane"
+            id={null}
+            role="tabpanel"
+            style={
+              Object {
+                "textAlign": "left",
+              }
+            }
+          >
+            For the first phase, we downloaded a few local copies of the data provided from these sources and glued them into the instances using either a script or by copy-paste. The COVID-19 API, RestCountries, and NewsAPI all provided APIs to access their data, but the OWID dataset is only available in file format (
+            <code>
+              .json
+            </code>
+             in this case).
+            <ul
+              className="list-unstyled"
+            >
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://api.covid19api.com"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/server.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  COVID-19 API
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://restcountries.eu"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/server.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  REST Countries
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://newsapi.org"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/server.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  NewsAPI
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hyperlink"
+                  href="https://covid.ourworldindata.org/data/owid-covid-data.json"
+                >
+                  <img
+                    height="100rem"
+                    src="/icons/server.png"
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                    width="100rem"
+                  />
+                  OWID COVID-19 Dataset
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div
+    style={
+      Object {
+        "marginTop": "18px",
+        "paddingBottom": "18px",
+      }
+    }
+  >
+    <h4>
+      GitLab Statistics
+    </h4>
+    <div
+      className="spinner-border text-primary"
+    />
+    <br />
+    <a
+      href="https://gitlab.com/jrmoulckers/covid19db-net"
+    >
+      <img
+        height="100rem"
+        src="/icons/gitlab.png"
+        width="100rem"
+      />
+    </a>
+    <br />
+    <a
+      href="https://documenter.getpostman.com/view/12799044/TVKJxuP4"
+    >
+      <img
+        height="100rem"
+        src="/icons/postman.png"
+        width="100rem"
+      />
+    </a>
+  </div>
+  <hr />
+  <div>
+    <div
+      className="card"
+      style={
+        Object {
+          "display": "inline-block",
+          "margin": "10px",
+          "width": "22rem",
+        }
+      }
+    >
+      <a
+        href="https://www.linkedin.com/in/shrivushankar/"
+      >
+        <img
+          className="card-img-top"
+          src="/imgs/sshh12.jpg"
+        />
+      </a>
+      <div
+        className="card-body"
+      >
+        <div
+          className="card-title h5"
+        >
+          <a
+            className="hyperlink"
+            href="https://www.linkedin.com/in/shrivushankar/"
+          >
+            Shrivu Shankar
+          </a>
+        </div>
+        <p
+          className="card-text"
+        >
+          Junior Computer Science Major from Houston, TX
+          <hr />
+          <b>
+            Role
+          </b>
+           
+          Full Stack Developer
+           
+          <hr />
+          <div
+            className="spinner-border text-primary"
+          />
+        </p>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "display": "inline-block",
+          "margin": "10px",
+          "width": "22rem",
+        }
+      }
+    >
+      <a
+        href="https://www.linkedin.com/in/cameron-doggett-186761164/"
+      >
+        <img
+          className="card-img-top"
+          src="/imgs/camd99.jpg"
+        />
+      </a>
+      <div
+        className="card-body"
+      >
+        <div
+          className="card-title h5"
+        >
+          <a
+            className="hyperlink"
+            href="https://www.linkedin.com/in/cameron-doggett-186761164/"
+          >
+            Cameron Doggett
+          </a>
+        </div>
+        <p
+          className="card-text"
+        >
+          Junior Computer Science Major from Katy, TX
+          <hr />
+          <b>
+            Role
+          </b>
+           
+          Back-end Developer
+           
+          <hr />
+          <div
+            className="spinner-border text-primary"
+          />
+        </p>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "display": "inline-block",
+          "margin": "10px",
+          "width": "22rem",
+        }
+      }
+    >
+      <a
+        href="https://www.linkedin.com/in/yashkakodkar/"
+      >
+        <img
+          className="card-img-top"
+          src="/imgs/YashKakodkar.jpg"
+        />
+      </a>
+      <div
+        className="card-body"
+      >
+        <div
+          className="card-title h5"
+        >
+          <a
+            className="hyperlink"
+            href="https://www.linkedin.com/in/yashkakodkar/"
+          >
+            Yash Kakodkar
+          </a>
+        </div>
+        <p
+          className="card-text"
+        >
+          Junior Computer Science Major from Katy, TX
+          <hr />
+          <b>
+            Role
+          </b>
+           
+          Full Stack Developer
+           
+          <hr />
+          <div
+            className="spinner-border text-primary"
+          />
+        </p>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "display": "inline-block",
+          "margin": "10px",
+          "width": "22rem",
+        }
+      }
+    >
+      <a
+        href="https://www.linkedin.com/in/jeffreymoulckers/"
+      >
+        <img
+          className="card-img-top"
+          src="/imgs/jrmoulckers.jpg"
+        />
+      </a>
+      <div
+        className="card-body"
+      >
+        <div
+          className="card-title h5"
+        >
+          <a
+            className="hyperlink"
+            href="https://www.linkedin.com/in/jeffreymoulckers/"
+          >
+            Jeffrey Moulckers
+          </a>
+        </div>
+        <p
+          className="card-text"
+        >
+          Junior Computer Science/Spanish Dual Major from Austin, TX
+          <hr />
+          <b>
+            Role
+          </b>
+           
+          Full Stack Developer
+           
+          <b>
+            (Team Lead)
+          </b>
+          <hr />
+          <div
+            className="spinner-border text-primary"
+          />
+        </p>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "display": "inline-block",
+          "margin": "10px",
+          "width": "22rem",
+        }
+      }
+    >
+      <a
+        href="https://www.linkedin.com/in/vassi-gianitsos-a3881b167/"
+      >
+        <img
+          className="card-img-top"
+          src="/imgs/vassi_gianitsos.jpg"
+        />
+      </a>
+      <div
+        className="card-body"
+      >
+        <div
+          className="card-title h5"
+        >
+          <a
+            className="hyperlink"
+            href="https://www.linkedin.com/in/vassi-gianitsos-a3881b167/"
+          >
+            Vassi Gianitsos
+          </a>
+        </div>
+        <p
+          className="card-text"
+        >
+          Senior Computer Science Major from Flower Mound, TX
+          <hr />
+          <b>
+            Role
+          </b>
+           
+          Front-end Developer
+           
+          <hr />
+          <div
+            className="spinner-border text-primary"
+          />
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render Pages Cases 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="page-header"
+  >
+    <div
+      className="page-header-content"
+    >
+      <h1
+        className="page-title"
+      >
+        Cases
+      </h1>
+      <p
+        className="page-description"
+      >
+        The table below displays the total case statistics in each country. Click a country's name to see more information.
+      </p>
+      <span
+        className="ant-input-affix-wrapper"
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "width": "75vw",
+          }
+        }
+      >
+        <input
+          className="ant-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Search"
+          style={null}
+          type="text"
+          value=""
+        />
+        <span
+          className="ant-input-suffix"
+        >
+          <span
+            aria-label="close-circle"
+            className="anticon anticon-close-circle ant-input-clear-icon-hidden ant-input-clear-icon"
+            onClick={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="close-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+      <div
+        className="page-header-button-group"
+      >
+        <button
+          className="ant-btn"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+            }
+          }
+          type="button"
+        >
+          <span>
+            Clear filters
+          </span>
+        </button>
+        <button
+          className="ant-btn"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+            }
+          }
+          type="button"
+        >
+          <span>
+            Clear comparisons
+          </span>
+        </button>
+        <button
+          className="ant-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Show comparisons (0)
+          </span>
+        </button>
+      </div>
+      <div
+        style={
+          Object {
+            "alignSelf": "start",
+          }
+        }
+      >
+        <div
+          aria-hidden={true}
+          className="ReactCollapse--collapse"
+          style={
+            Object {
+              "height": "0px",
+              "overflow": "hidden",
+            }
+          }
+        >
+          <div
+            className="ReactCollapse--content"
+          >
+            <h2
+              className="compare-title"
+              style={
+                Object {
+                  "paddingTop": 20,
+                }
+              }
+            >
+              Comparisons
+            </h2>
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "50vh",
+          "paddingTop": 250,
+          "textAlign": "center",
+          "width": "100vw",
+        }
+      }
+    >
+      <div
+        className="ant-spin ant-spin-lg ant-spin-spinning"
+      >
+        <span
+          className="ant-spin-dot ant-spin-dot-spin"
+        >
+          <i
+            className="ant-spin-dot-item"
+          />
+          <i
+            className="ant-spin-dot-item"
+          />
+          <i
+            className="ant-spin-dot-item"
+          />
+          <i
+            className="ant-spin-dot-item"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render Pages Country 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="country-page-header"
+  >
+    <div
+      className="country-page-header-content"
+    >
+      <h1
+        className="page-title"
+      >
+        Countries 
+      </h1>
+      <p
+        className="page-description"
+      >
+        The grid below displays various information about each country. Click a card to see more information.
+      </p>
+      <span
+        className="ant-input-affix-wrapper"
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "width": "75vw",
+          }
+        }
+      >
+        <input
+          className="ant-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Search"
+          style={null}
+          type="text"
+          value=""
+        />
+        <span
+          className="ant-input-suffix"
+        >
+          <span
+            aria-label="close-circle"
+            className="anticon anticon-close-circle ant-input-clear-icon-hidden ant-input-clear-icon"
+            onClick={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="close-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+      <div
+        className="compare-group"
+      >
+        <button
+          className="ant-btn"
+          onClick={[Function]}
+          style={
+            Object {
+              "alignSelf": "start",
+              "marginTop": 10,
+            }
+          }
+          type="button"
+        >
+          <span>
+            Show comparisons
+          </span>
+        </button>
+        <div
+          style={
+            Object {
+              "alignSelf": "start",
+            }
+          }
+        >
+          <div
+            aria-hidden={true}
+            className="ReactCollapse--collapse"
+            style={
+              Object {
+                "height": "0px",
+                "overflow": "hidden",
+              }
+            }
+          >
+            <div
+              className="ReactCollapse--content"
+            >
+              <h2
+                className="compare-title"
+                style={
+                  Object {
+                    "paddingTop": 20,
+                  }
+                }
+              >
+                Comparisons
+              </h2>
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "height": "50vh",
+        "paddingTop": 250,
+        "textAlign": "center",
+        "width": "100vw",
+      }
+    }
+  >
+    <div
+      className="ant-spin ant-spin-lg ant-spin-spinning"
+    >
+      <span
+        className="ant-spin-dot ant-spin-dot-spin"
+      >
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render Pages Global News 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="about-page-header"
+  >
+    <div
+      className="about-page-header-content"
+    >
+      <h1
+        className="about-page-title"
+      >
+        Global News
+      </h1>
+      <div
+        className="about-page-description"
+      >
+        Read news about COVID-19 from around the world.
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "height": "50vh",
+        "paddingTop": 250,
+        "textAlign": "center",
+        "width": "100vw",
+      }
+    }
+  >
+    <div
+      className="ant-spin ant-spin-lg ant-spin-spinning"
+    >
+      <span
+        className="ant-spin-dot ant-spin-dot-spin"
+      >
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render Pages Main 1`] = `
+<div
+  className="App"
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+    }
+  }
+>
+  <div
+    className="page-header-div"
+  >
+    <div
+      className="landing-image-art-div"
+    >
+      <img
+        className="landing-image-art"
+        src="test-file-stub"
+      />
+      <a
+        className="landing-image-art-link"
+        href="https://www.freepik.com/vectors/doctor"
+      >
+        Doctor vector created by freepik - www.freepik.com
+      </a>
+    </div>
+    <div
+      className="header-text-div"
+    >
+      <h1
+        className="main-text"
+      >
+        Coronavirus sucks. 
+        <br />
+         Maybe this can help.
+      </h1>
+      <p
+        className="body-text"
+      >
+        Over 1 million people have passed away due to COVID-19 in the past year. Our databse gathers various statistics on the virus in all countries and we hope it can help you.
+      </p>
+    </div>
+  </div>
+  <div
+    className="ant-spin ant-spin-lg ant-spin-spinning"
+  >
+    <span
+      className="ant-spin-dot ant-spin-dot-spin"
+    >
+      <i
+        className="ant-spin-dot-item"
+      />
+      <i
+        className="ant-spin-dot-item"
+      />
+      <i
+        className="ant-spin-dot-item"
+      />
+      <i
+        className="ant-spin-dot-item"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Render Pages Risk 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#323776",
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "center",
+          "paddingBottom": 40,
+          "paddingTop": 20,
+          "width": "75vw",
+        }
+      }
+    >
+      <h1
+        style={
+          Object {
+            "color": "white",
+            "fontSize": "2em",
+            "fontWeight": 800,
+            "marginBottom": 20,
+          }
+        }
+      >
+        Risk Factors
+      </h1>
+      <p
+        style={
+          Object {
+            "color": "white",
+            "fontSize": "1.1em",
+            "marginBottom": 20,
+          }
+        }
+      >
+        The table below displays the risk factor statistics in each country. Click a country's name to see more information.
+      </p>
+      <span
+        className="ant-input-affix-wrapper"
+        onMouseUp={[Function]}
+      >
+        <input
+          className="ant-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Search"
+          style={null}
+          type="text"
+          value=""
+        />
+        <span
+          className="ant-input-suffix"
+        >
+          <span
+            aria-label="close-circle"
+            className="anticon anticon-close-circle ant-input-clear-icon-hidden ant-input-clear-icon"
+            onClick={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="close-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+      <div
+        className="page-header-button-group"
+      >
+        <button
+          className="ant-btn"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+            }
+          }
+          type="button"
+        >
+          <span>
+            Clear filters
+          </span>
+        </button>
+        <button
+          className="ant-btn"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+            }
+          }
+          type="button"
+        >
+          <span>
+            Clear comparisons
+          </span>
+        </button>
+        <button
+          className="ant-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Show comparisons (0)
+          </span>
+        </button>
+      </div>
+      <div
+        style={
+          Object {
+            "alignSelf": "start",
+          }
+        }
+      >
+        <div
+          aria-hidden={true}
+          className="ReactCollapse--collapse"
+          style={
+            Object {
+              "height": "0px",
+              "overflow": "hidden",
+            }
+          }
+        >
+          <div
+            className="ReactCollapse--content"
+          >
+            <h2
+              className="compare-title"
+              style={
+                Object {
+                  "paddingTop": 20,
+                }
+              }
+            >
+              Comparisons
+            </h2>
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "height": "50vh",
+        "paddingTop": 250,
+        "textAlign": "center",
+        "width": "100vw",
+      }
+    }
+  >
+    <div
+      className="ant-spin ant-spin-lg ant-spin-spinning"
+    >
+      <span
+        className="ant-spin-dot ant-spin-dot-spin"
+      >
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;

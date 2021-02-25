@@ -1,0 +1,8 @@
+a.hyperlink {
+    color: rgb(22, 144, 255);
+    text-decoration: underline;
+}
+
+a.hyperlink:hover {
+    color: rgb(72, 167, 255);
+}

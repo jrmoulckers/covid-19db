@@ -1,0 +1,52 @@
+image: python:latest
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+    - frontend/node_modules
+    - vendor/
+    - .apt/
+before_script:
+  - echo $CI_PROJECT_DIR
+  # Packages
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+  - sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - apt-get update -qy && apt-get install -y google-chrome-stable
+  - export APT_DIR=$CI_PROJECT_DIR/.apt && export APT_STATE_LISTS=$APT_DIR/lists && export APT_CACHE_ARCHIVES=$APT_DIR/archives
+  - printf "dir::state::lists    ${APT_STATE_LISTS};\ndir::cache::archives    ${APT_CACHE_ARCHIVES};\n" > /etc/apt/apt.conf
+  - mkdir -p "${APT_STATE_LISTS}/partial" && mkdir -p "${APT_CACHE_ARCHIVES}/partial"
+  # Install Deps
+  - apt-get update -qy
+  - apt-get install -y nodejs npm xvfb
+  - npm install -g yarn jest newman
+  - _timeout() { ( set +b; sleep "$1" & "${@:2}" & wait -n; kill -9 `jobs -p`; ) }
+  # Version Check
+  - yarn --version
+  - python -V
+  # Python Setup
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+  # Install App Deps
+  - pip install -r backend/requirements.txt
+  - pushd frontend && yarn install && popd
+test_unit:
+  script:
+    - python backend/test.py
+    - cd frontend
+    - jest
+test_e2e:
+  script:
+    # Selenium
+    - wget https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip -O /tmp/chromedriver_linux64.zip
+    - unzip /tmp/chromedriver_linux64.zip
+    - mv chromedriver /bin/chromedriver
+    - pip install selenium==3.141.0 pyvirtualdisplay
+    # Start Apps & Test
+    - (_timeout 100 python backend/main.py) &
+    - newman run postman.tests.json -e postman.env.json
+    - cd frontend
+    - (_timeout 60 yarn react) &
+    - python gui_tests.py

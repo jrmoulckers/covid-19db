@@ -1,0 +1,10 @@
+**/__pycache__/
+*.pyc
+
+# static data
+data
+capital_data
+
+# env
+secret.py
+.env

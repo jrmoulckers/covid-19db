@@ -1,0 +1,2858 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "COVID-19 DB API",
+        "license": {
+            "name": "MIT"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://api.covid19db.net"
+        }
+    ],
+    "paths": {
+        "/countries": {
+            "summary": "All countries",
+            "get": {
+                "summary": "Details about all countries",
+                "operationId": "getAllCountries",
+                "tags": [
+                    "countries"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/countryAttributes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Details about all countries",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Country"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/countries/{identifier}": {
+            "summary": "A country",
+            "get": {
+                "summary": "Details about a country",
+                "operationId": "getCountry",
+                "tags": [
+                    "countries"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/countryID"
+                    },
+                    {
+                        "$ref": "#/components/parameters/countryAttributes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Details about a country",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Country"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/case-statistics": {
+            "summary": "All case statistics",
+            "get": {
+                "summary": "Retrieve all instances of case statistics",
+                "operationId": "getAllCaseStatistics",
+                "tags": [
+                    "case-statistics"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/caseStatsAttributes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieve all instances of case statistics",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CaseStatistics"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/case-statistics/{identifier}": {
+            "summary": "An instance of case statistics",
+            "get": {
+                "summary": "Retrieve one instance of case statistics",
+                "operationId": "getCaseStatistics",
+                "tags": [
+                    "case-statistics"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/countryID"
+                    },
+                    {
+                        "$ref": "#/components/parameters/caseStatsAttributes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieve one instance of case statistics",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseStatistics"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/risk-factor-statistics": {
+            "summary": "All risk factor statistics",
+            "get": {
+                "summary": "Retrieve all instances of risk factor statistics",
+                "operationId": "getAllRiskFactorStatistics",
+                "tags": [
+                    "risk-factor-statistics"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/riskFactorStatsAttributes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieve all instances of risk factor statistics",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/RiskFactorStatistics"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/risk-factor-statistics/{identifier}": {
+            "summary": "An instance of risk factor statistics",
+            "get": {
+                "summary": "Retrieve one instance of risk factor statistics",
+                "operationId": "getRiskFactorStatistics",
+                "tags": [
+                    "risk-factor-statistics"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/countryID"
+                    },
+                    {
+                        "$ref": "#/components/parameters/riskFactorStatsAttributes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieve one instance of risk factor statistics",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RiskFactorStatistics"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/global-news": {
+            "summary": "Global news relating to COVID-19",
+            "get": {
+                "summary": "Retrieve all global news",
+                "operationId": "getGlobalNews",
+                "tags": [
+                    "global-news"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieve all global news",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NewsHeadline"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/global-stats": {
+            "summary": "Global statistics for COVID-19",
+            "get": {
+                "summary": "Retrieve global statistics",
+                "operationId": "getGlobalStats",
+                "tags": [
+                    "global-stats"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieve global statistics",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "totals",
+                                        "new"
+                                    ],
+                                    "properties": {
+                                        "totals": {
+                                            "type": "object",
+                                            "required": [
+                                                "cases",
+                                                "deaths",
+                                                "recovered",
+                                                "active"
+                                            ],
+                                            "properties": {
+                                                "cases": {
+                                                    "type": "integer",
+                                                    "format": "int64"
+                                                },
+                                                "deaths": {
+                                                    "type": "integer",
+                                                    "format": "int64"
+                                                },
+                                                "recovered": {
+                                                    "type": "integer",
+                                                    "format": "int64"
+                                                },
+                                                "active": {
+                                                    "type": "integer",
+                                                    "format": "int64"
+                                                }
+                                            }
+                                        },
+                                        "new": {
+                                            "type": "object",
+                                            "required": [
+                                                "cases",
+                                                "deaths",
+                                                "recovered",
+                                                "active"
+                                            ],
+                                            "properties": {
+                                                "cases": {
+                                                    "type": "integer",
+                                                    "format": "int64"
+                                                },
+                                                "deaths": {
+                                                    "type": "integer",
+                                                    "format": "int64"
+                                                },
+                                                "recovered": {
+                                                    "type": "integer",
+                                                    "format": "int64"
+                                                },
+                                                "active": {
+                                                    "type": "integer",
+                                                    "format": "int64"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search": {
+            "summary": "Searching",
+            "get": {
+                "summary": "Perform a search with a given query",
+                "operationId": "getSearch",
+                "tags": [
+                    "search"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response includes country identifiers associated with the given terms of the query",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "codes"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "codes": {
+                                                "type": "object",
+                                                "required": [
+                                                    "alpha2Code",
+                                                    "alpha3Code"
+                                                ],
+                                                "properties": {
+                                                    "alpha2Code": {
+                                                        "type": "string"
+                                                    },
+                                                    "alpha3Code": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Country": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "codes"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "codes": {
+                        "type": "object",
+                        "required": [
+                            "alpha2Code",
+                            "alpha3Code"
+                        ],
+                        "properties": {
+                            "alpha2Code": {
+                                "type": "string"
+                            },
+                            "alpha3Code": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "region": {
+                        "type": "object",
+                        "required": [
+                            "region",
+                            "subregion"
+                        ],
+                        "properties": {
+                            "region": {
+                                "type": "string"
+                            },
+                            "subregion": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "location": {
+                        "$ref": "#/components/schemas/Location"
+                    },
+                    "population": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "area": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "alternateNames": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "languages": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "iso639_1",
+                                "iso639_2",
+                                "name",
+                                "nativeName"
+                            ],
+                            "properties": {
+                                "iso639_1": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "iso639_2": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "nativeName": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "capital": {
+                        "type": "object",
+                        "required": [
+                            "name",
+                            "location",
+                            "img"
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "location": {
+                                "$ref": "#/components/schemas/Location"
+                            },
+                            "img": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "regionalBlocs": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "acronym",
+                                "name",
+                                "otherAcronyms",
+                                "otherNames"
+                            ],
+                            "properties": {
+                                "acronym": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "otherAcronyms": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "otherNames": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "borders": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "currencies": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "code",
+                                "name",
+                                "symbol"
+                            ],
+                            "properties": {
+                                "code": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "symbol": {
+                                    "type": "string",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    },
+                    "timezones": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "callingCodes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "flag": {
+                        "type": "string"
+                    },
+                    "news": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NewsHeadline"
+                        }
+                    },
+                    "sources": {
+                        "$ref": "#/components/schemas/Sources"
+                    }
+                },
+                "example": {
+                    "alternateNames": [
+                        "US",
+                        "USA",
+                        "United States of America"
+                    ],
+                    "area": 9629091,
+                    "borders": [
+                        "CAN",
+                        "MEX"
+                    ],
+                    "callingCodes": [
+                        "1"
+                    ],
+                    "capital": {
+                        "img": "https://api.covid19db.net/static/images/capitals/USA.jpeg",
+                        "location": {
+                            "lat": 38.9071923,
+                            "lng": -77.0368707
+                        },
+                        "name": "Washington, D.C."
+                    },
+                    "codes": {
+                        "alpha2Code": "US",
+                        "alpha3Code": "USA"
+                    },
+                    "currencies": [
+                        {
+                            "code": "USD",
+                            "name": "United States dollar",
+                            "symbol": "$"
+                        }
+                    ],
+                    "flag": "https://restcountries.eu/data/usa.svg",
+                    "languages": [
+                        {
+                            "iso639_1": "en",
+                            "iso639_2": "eng",
+                            "name": "English",
+                            "nativeName": "English"
+                        }
+                    ],
+                    "location": {
+                        "lat": 38,
+                        "lng": -97
+                    },
+                    "name": "United States",
+                    "news": [
+                        {
+                            "author": "Julian Zelizer, CNN Political Analyst",
+                            "content": "Julian Zelizer, a CNN political analyst, is a professor of history and public affairs at Princeton University and author of the book, \"Burning Down the House: Newt Gingrich, the Fall of a Speaker, an… [+4445 chars]",
+                            "description": "In a presidential election with more shocking moments than any other, the news of October 2 has rattled the nation and the world. President Donald Trump and First Lady Melania Trump have been diagnosed with Covid-19. With only a few weeks left until Election …",
+                            "publishedAt": "2020-10-02T14:40:03Z",
+                            "source": {
+                                "id": "cnn",
+                                "name": "CNN"
+                            },
+                            "title": "Opinion: Even the President of the United States isn't safe",
+                            "url": "https://www.cnn.com/2020/10/02/opinions/even-president-isnt-safe-covid-zelizer/index.html",
+                            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/201002090934-trump-leavng-air-force-one-super-tease.jpg"
+                        },
+                        {
+                            "author": "Sameer Yasir",
+                            "content": "SRINAGAR, Kashmir More than 100,000 people in India have died from the coronavirus, the government said on Saturday, even as officials plan to lift more restrictions in hopes of reviving the crippled… [+835 chars]",
+                            "description": "Only the United States and Brazil have reported more deaths from the coronavirus. Despite its climbing numbers, India plans to lift more restrictions.",
+                            "publishedAt": "2020-10-03T08:06:58Z",
+                            "source": {
+                                "id": null,
+                                "name": "New York Times"
+                            },
+                            "title": "India’s Covid-19 Death Toll Passes 100,000",
+                            "url": "https://www.nytimes.com/2020/10/03/world/asia/india-coronavirus-deaths.html",
+                            "urlToImage": "https://static01.nyt.com/images/2020/10/03/world/03virus-india/03virus-india-facebookJumbo.jpg"
+                        },
+                        {
+                            "author": "Rick Gladstone",
+                            "content": "Mr. Xi, by contrast, described China as a benevolent power that does not wish ill on anyone, without mentioning Chinas expansionist behavior in the South China Sea, mass detentions in Xinjiang, polit… [+1547 chars]",
+                            "description": "In speeches broadcast at this year’s Covid-compromised General Assembly, the presidents of China and the United States punctuated an intensifying schism between the two superpowers.",
+                            "publishedAt": "2020-09-22T22:07:19Z",
+                            "source": {
+                                "id": null,
+                                "name": "New York Times"
+                            },
+                            "title": "Trump Demands U.N. Hold China to Account for Coronavirus Pandemic",
+                            "url": "https://www.nytimes.com/2020/09/22/world/americas/UN-Trump-Xi-China-coronavirus.html",
+                            "urlToImage": "https://static01.nyt.com/images/2020/09/22/world/22nations/22nations-facebookJumbo.jpg"
+                        },
+                        {
+                            "author": null,
+                            "content": null,
+                            "description": "The coronavirus outbreak is intensifying across the United States, with much of the country moving in the wrong direction and some states enforcing new restrictions CNN's Nick Watt reports.",
+                            "publishedAt": "2020-10-08T23:00:49Z",
+                            "source": {
+                                "id": "cnn",
+                                "name": "CNN"
+                            },
+                            "title": "See the 11 states that set new Covid-19 daily case record",
+                            "url": "https://www.cnn.com/videos/health/2020/10/08/coronavirus-daily-wrap-nick-watt-dnt-sitroom-vpx.cnn",
+                            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/201008171234-hospital-interior-super-tease.jpg"
+                        },
+                        {
+                            "author": "Madeline Holcombe and Maggie Fox, CNN",
+                            "content": "(CNN)As the Covid-19 pandemic got worse in the United States, so, too, did levels of stress and depression, according to a new report.\r\nSince the virus broke out in the US more than six months ago, c… [+5703 chars]",
+                            "description": "As the Covid-19 pandemic got worse in the United States, so, too, did levels of stress and depression, according to a new report.",
+                            "publishedAt": "2020-09-20T07:51:30Z",
+                            "source": {
+                                "id": "cnn",
+                                "name": "CNN"
+                            },
+                            "title": "As coronavirus skyrocketed in the US, so did stress and depression",
+                            "url": "https://www.cnn.com/2020/09/20/health/us-coronavirus-sunday/index.html",
+                            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200920024954-covid-testing-massachusetts-0914-restricted-super-tease.jpg"
+                        }
+                    ],
+                    "population": 323947000,
+                    "region": {
+                        "region": "Americas",
+                        "subregion": "Northern America"
+                    },
+                    "regionalBlocs": [
+                        {
+                            "acronym": "NAFTA",
+                            "name": "North American Free Trade Agreement",
+                            "otherAcronyms": [],
+                            "otherNames": [
+                                "Tratado de Libre Comercio de América del Norte",
+                                "Accord de Libre-échange Nord-Américain"
+                            ]
+                        }
+                    ],
+                    "sources": [
+                        {
+                            "name": "REST Countries",
+                            "url": "https://restcountries.eu/rest/v2/alpha/USA"
+                        },
+                        {
+                            "name": "Google Places API",
+                            "url": "https://maps.googleapis.com/maps/api/place"
+                        },
+                        {
+                            "name": "NewsAPI",
+                            "url": "https://newsapi.org/v2"
+                        }
+                    ],
+                    "timezones": [
+                        "UTC-12:00",
+                        "UTC-11:00",
+                        "UTC-10:00",
+                        "UTC-09:00",
+                        "UTC-08:00",
+                        "UTC-07:00",
+                        "UTC-06:00",
+                        "UTC-05:00",
+                        "UTC-04:00",
+                        "UTC+10:00",
+                        "UTC+12:00"
+                    ]
+                }
+            },
+            "NewsHeadline": {
+                "type": "object",
+                "required": [
+                    "source",
+                    "author",
+                    "title",
+                    "description",
+                    "url",
+                    "urlToImage",
+                    "publishedAt",
+                    "content"
+                ],
+                "properties": {
+                    "source": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "name"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "nullable": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "nullable": true
+                            }
+                        }
+                    },
+                    "author": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "urlToImage": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "publishedAt": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "content": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "Location": {
+                "type": "object",
+                "required": [
+                    "lat",
+                    "lng"
+                ],
+                "properties": {
+                    "lat": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "lng": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "CaseStatistics": {
+                "type": "object",
+                "required": [
+                    "country",
+                    "date"
+                ],
+                "properties": {
+                    "country": {
+                        "$ref": "#/components/schemas/CountryID"
+                    },
+                    "location": {
+                        "$ref": "#/components/schemas/Location"
+                    },
+                    "date": {
+                        "type": "string"
+                    },
+                    "totals": {
+                        "type": "object",
+                        "required": [
+                            "cases",
+                            "deaths",
+                            "recovered",
+                            "active"
+                        ],
+                        "properties": {
+                            "cases": {
+                                "type": "integer",
+                                "format": "int64"
+                            },
+                            "deaths": {
+                                "type": "integer",
+                                "format": "int64"
+                            },
+                            "recovered": {
+                                "type": "integer",
+                                "format": "int64"
+                            },
+                            "active": {
+                                "type": "integer",
+                                "format": "int64"
+                            }
+                        }
+                    },
+                    "new": {
+                        "type": "object",
+                        "required": [
+                            "cases",
+                            "deaths",
+                            "recovered",
+                            "active"
+                        ],
+                        "properties": {
+                            "cases": {
+                                "type": "integer",
+                                "format": "int64"
+                            },
+                            "deaths": {
+                                "type": "integer",
+                                "format": "int64"
+                            },
+                            "recovered": {
+                                "type": "integer",
+                                "format": "int64"
+                            },
+                            "active": {
+                                "type": "integer",
+                                "format": "int64"
+                            }
+                        }
+                    },
+                    "smoothedNew": {
+                        "type": "object",
+                        "required": [
+                            "cases",
+                            "deaths"
+                        ],
+                        "properties": {
+                            "cases": {
+                                "type": "number",
+                                "format": "double"
+                            },
+                            "deaths": {
+                                "type": "number",
+                                "format": "double"
+                            }
+                        }
+                    },
+                    "percentages": {
+                        "type": "object",
+                        "required": [
+                            "fatality",
+                            "infected",
+                            "haveRecovered",
+                            "active"
+                        ],
+                        "properties": {
+                            "fatality": {
+                                "type": "number",
+                                "format": "double"
+                            },
+                            "infected": {
+                                "type": "number",
+                                "format": "double"
+                            },
+                            "haveRecovered": {
+                                "type": "number",
+                                "format": "double"
+                            },
+                            "active": {
+                                "type": "number",
+                                "format": "double"
+                            }
+                        }
+                    },
+                    "derivativeNew": {
+                        "type": "object",
+                        "required": [
+                            "cases",
+                            "deaths",
+                            "recovered",
+                            "active"
+                        ],
+                        "properties": {
+                            "cases": {
+                                "type": "number",
+                                "format": "double"
+                            },
+                            "deaths": {
+                                "type": "number",
+                                "format": "double"
+                            },
+                            "recovered": {
+                                "type": "number",
+                                "format": "double"
+                            },
+                            "active": {
+                                "type": "number",
+                                "format": "double"
+                            }
+                        }
+                    },
+                    "history": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CaseDataEntry"
+                        }
+                    },
+                    "sources": {
+                        "$ref": "#/components/schemas/Sources"
+                    },
+                    "testing": {
+                        "type": "object",
+                        "required": [
+                            "newTests",
+                            "newTestsSmoothed",
+                            "positiveRate",
+                            "totalTests"
+                        ],
+                        "properties": {
+                            "newTests": {
+                                "type": "object",
+                                "required": [
+                                    "date",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "date": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "value": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "nullable": true
+                                    }
+                                }
+                            },
+                            "newTestsSmoothed": {
+                                "type": "object",
+                                "required": [
+                                    "date",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "date": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "value": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "nullable": true
+                                    }
+                                }
+                            },
+                            "positiveRate": {
+                                "type": "object",
+                                "required": [
+                                    "date",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "date": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "value": {
+                                        "type": "number",
+                                        "format": "double",
+                                        "nullable": true
+                                    }
+                                }
+                            },
+                            "totalTests": {
+                                "type": "object",
+                                "required": [
+                                    "date",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "date": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "value": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "nullable": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "country": {
+                        "codes": {
+                            "alpha2Code": "US",
+                            "alpha3Code": "USA"
+                        },
+                        "name": "United States"
+                    },
+                    "date": "2020-10-07",
+                    "derivativeNew": {
+                        "active": -1593.5714285714287,
+                        "cases": 1276.5714285714287,
+                        "deaths": -4.428571428571429,
+                        "recovered": 2874.5714285714284
+                    },
+                    "history": [
+                        {
+                            "Active": 2012905,
+                            "Confirmed": 3115816,
+                            "Country": "United States of America",
+                            "Date": "2020-07-09",
+                            "Deaths": 133800,
+                            "Recovered": 969111
+                        },
+                        {
+                            "Active": 2065726,
+                            "Confirmed": 3183535,
+                            "Country": "United States of America",
+                            "Date": "2020-07-10",
+                            "Deaths": 134624,
+                            "Recovered": 983185
+                        },
+                        {
+                            "Active": 2112796,
+                            "Confirmed": 3243686,
+                            "Country": "United States of America",
+                            "Date": "2020-07-11",
+                            "Deaths": 135314,
+                            "Recovered": 995576
+                        },
+                        {
+                            "Active": 2160466,
+                            "Confirmed": 3302565,
+                            "Country": "United States of America",
+                            "Date": "2020-07-12",
+                            "Deaths": 135773,
+                            "Recovered": 1006326
+                        },
+                        {
+                            "Active": 2193956,
+                            "Confirmed": 3362035,
+                            "Country": "United States of America",
+                            "Date": "2020-07-13",
+                            "Deaths": 136140,
+                            "Recovered": 1031939
+                        },
+                        {
+                            "Active": 2242828,
+                            "Confirmed": 3428992,
+                            "Country": "United States of America",
+                            "Date": "2020-07-14",
+                            "Deaths": 137066,
+                            "Recovered": 1049098
+                        },
+                        {
+                            "Active": 2282699,
+                            "Confirmed": 3496615,
+                            "Country": "United States of America",
+                            "Date": "2020-07-15",
+                            "Deaths": 138034,
+                            "Recovered": 1075882
+                        },
+                        {
+                            "Active": 2344355,
+                            "Confirmed": 3573977,
+                            "Country": "United States of America",
+                            "Date": "2020-07-16",
+                            "Deaths": 138977,
+                            "Recovered": 1090645
+                        },
+                        {
+                            "Active": 2398876,
+                            "Confirmed": 3645987,
+                            "Country": "United States of America",
+                            "Date": "2020-07-17",
+                            "Deaths": 139907,
+                            "Recovered": 1107204
+                        },
+                        {
+                            "Active": 2445240,
+                            "Confirmed": 3708735,
+                            "Country": "United States of America",
+                            "Date": "2020-07-18",
+                            "Deaths": 140775,
+                            "Recovered": 1122720
+                        },
+                        {
+                            "Active": 2497647,
+                            "Confirmed": 3769990,
+                            "Country": "United States of America",
+                            "Date": "2020-07-19",
+                            "Deaths": 141222,
+                            "Recovered": 1131121
+                        },
+                        {
+                            "Active": 2530109,
+                            "Confirmed": 3831932,
+                            "Country": "United States of America",
+                            "Date": "2020-07-20",
+                            "Deaths": 141736,
+                            "Recovered": 1160087
+                        },
+                        {
+                            "Active": 2571502,
+                            "Confirmed": 3896363,
+                            "Country": "United States of America",
+                            "Date": "2020-07-21",
+                            "Deaths": 142843,
+                            "Recovered": 1182018
+                        },
+                        {
+                            "Active": 2612760,
+                            "Confirmed": 3967668,
+                            "Country": "United States of America",
+                            "Date": "2020-07-22",
+                            "Deaths": 144059,
+                            "Recovered": 1210849
+                        },
+                        {
+                            "Active": 2658319,
+                            "Confirmed": 4036741,
+                            "Country": "United States of America",
+                            "Date": "2020-07-23",
+                            "Deaths": 145153,
+                            "Recovered": 1233269
+                        },
+                        {
+                            "Active": 2701939,
+                            "Confirmed": 4109848,
+                            "Country": "United States of America",
+                            "Date": "2020-07-24",
+                            "Deaths": 146285,
+                            "Recovered": 1261624
+                        },
+                        {
+                            "Active": 2749704,
+                            "Confirmed": 4176302,
+                            "Country": "United States of America",
+                            "Date": "2020-07-25",
+                            "Deaths": 147184,
+                            "Recovered": 1279414
+                        },
+                        {
+                            "Active": 2785585,
+                            "Confirmed": 4231104,
+                            "Country": "United States of America",
+                            "Date": "2020-07-26",
+                            "Deaths": 147656,
+                            "Recovered": 1297863
+                        },
+                        {
+                            "Active": 2813104,
+                            "Confirmed": 4287684,
+                            "Country": "United States of America",
+                            "Date": "2020-07-27",
+                            "Deaths": 148776,
+                            "Recovered": 1325804
+                        },
+                        {
+                            "Active": 2847964,
+                            "Confirmed": 4353477,
+                            "Country": "United States of America",
+                            "Date": "2020-07-28",
+                            "Deaths": 150150,
+                            "Recovered": 1355363
+                        },
+                        {
+                            "Active": 2883772,
+                            "Confirmed": 4424779,
+                            "Country": "United States of America",
+                            "Date": "2020-07-29",
+                            "Deaths": 151582,
+                            "Recovered": 1389425
+                        },
+                        {
+                            "Active": 2925612,
+                            "Confirmed": 4492558,
+                            "Country": "United States of America",
+                            "Date": "2020-07-30",
+                            "Deaths": 152791,
+                            "Recovered": 1414155
+                        },
+                        {
+                            "Active": 2967517,
+                            "Confirmed": 4559711,
+                            "Country": "United States of America",
+                            "Date": "2020-07-31",
+                            "Deaths": 154034,
+                            "Recovered": 1438160
+                        },
+                        {
+                            "Active": 3000580,
+                            "Confirmed": 4617614,
+                            "Country": "United States of America",
+                            "Date": "2020-08-01",
+                            "Deaths": 155149,
+                            "Recovered": 1461885
+                        },
+                        {
+                            "Active": 3040702,
+                            "Confirmed": 4664943,
+                            "Country": "United States of America",
+                            "Date": "2020-08-02",
+                            "Deaths": 155552,
+                            "Recovered": 1468689
+                        },
+                        {
+                            "Active": 3040245,
+                            "Confirmed": 4709773,
+                            "Country": "United States of America",
+                            "Date": "2020-08-03",
+                            "Deaths": 156082,
+                            "Recovered": 1513446
+                        },
+                        {
+                            "Active": 3080794,
+                            "Confirmed": 4767233,
+                            "Country": "United States of America",
+                            "Date": "2020-08-04",
+                            "Deaths": 157460,
+                            "Recovered": 1528979
+                        },
+                        {
+                            "Active": 3084198,
+                            "Confirmed": 4820885,
+                            "Country": "United States of America",
+                            "Date": "2020-08-05",
+                            "Deaths": 158836,
+                            "Recovered": 1577851
+                        },
+                        {
+                            "Active": 3121812,
+                            "Confirmed": 4880525,
+                            "Country": "United States of America",
+                            "Date": "2020-08-06",
+                            "Deaths": 160089,
+                            "Recovered": 1598624
+                        },
+                        {
+                            "Active": 3153656,
+                            "Confirmed": 4938857,
+                            "Country": "United States of America",
+                            "Date": "2020-08-07",
+                            "Deaths": 161331,
+                            "Recovered": 1623870
+                        },
+                        {
+                            "Active": 3189021,
+                            "Confirmed": 4994547,
+                            "Country": "United States of America",
+                            "Date": "2020-08-08",
+                            "Deaths": 162408,
+                            "Recovered": 1643118
+                        },
+                        {
+                            "Active": 3220887,
+                            "Confirmed": 5040670,
+                            "Country": "United States of America",
+                            "Date": "2020-08-09",
+                            "Deaths": 162919,
+                            "Recovered": 1656864
+                        },
+                        {
+                            "Active": 3256229,
+                            "Confirmed": 5090430,
+                            "Country": "United States of America",
+                            "Date": "2020-08-10",
+                            "Deaths": 163446,
+                            "Recovered": 1670755
+                        },
+                        {
+                            "Active": 3257863,
+                            "Confirmed": 5137333,
+                            "Country": "United States of America",
+                            "Date": "2020-08-11",
+                            "Deaths": 164510,
+                            "Recovered": 1714960
+                        },
+                        {
+                            "Active": 3274562,
+                            "Confirmed": 5194337,
+                            "Country": "United States of America",
+                            "Date": "2020-08-12",
+                            "Deaths": 166015,
+                            "Recovered": 1753760
+                        },
+                        {
+                            "Active": 3304581,
+                            "Confirmed": 5246314,
+                            "Country": "United States of America",
+                            "Date": "2020-08-13",
+                            "Deaths": 167085,
+                            "Recovered": 1774648
+                        },
+                        {
+                            "Active": 3346166,
+                            "Confirmed": 5310915,
+                            "Country": "United States of America",
+                            "Date": "2020-08-14",
+                            "Deaths": 168423,
+                            "Recovered": 1796326
+                        },
+                        {
+                            "Active": 3370356,
+                            "Confirmed": 5358340,
+                            "Country": "United States of America",
+                            "Date": "2020-08-15",
+                            "Deaths": 169457,
+                            "Recovered": 1818527
+                        },
+                        {
+                            "Active": 3396658,
+                            "Confirmed": 5399753,
+                            "Country": "United States of America",
+                            "Date": "2020-08-16",
+                            "Deaths": 170028,
+                            "Recovered": 1833067
+                        },
+                        {
+                            "Active": 3399638,
+                            "Confirmed": 5435692,
+                            "Country": "United States of America",
+                            "Date": "2020-08-17",
+                            "Deaths": 170474,
+                            "Recovered": 1865580
+                        },
+                        {
+                            "Active": 3411088,
+                            "Confirmed": 5481046,
+                            "Country": "United States of America",
+                            "Date": "2020-08-18",
+                            "Deaths": 171799,
+                            "Recovered": 1898159
+                        },
+                        {
+                            "Active": 3430175,
+                            "Confirmed": 5528376,
+                            "Country": "United States of America",
+                            "Date": "2020-08-19",
+                            "Deaths": 173152,
+                            "Recovered": 1925049
+                        },
+                        {
+                            "Active": 3451191,
+                            "Confirmed": 5572457,
+                            "Country": "United States of America",
+                            "Date": "2020-08-20",
+                            "Deaths": 174231,
+                            "Recovered": 1947035
+                        },
+                        {
+                            "Active": 3480284,
+                            "Confirmed": 5620676,
+                            "Country": "United States of America",
+                            "Date": "2020-08-21",
+                            "Deaths": 175336,
+                            "Recovered": 1965056
+                        },
+                        {
+                            "Active": 3503284,
+                            "Confirmed": 5665086,
+                            "Country": "United States of America",
+                            "Date": "2020-08-22",
+                            "Deaths": 176318,
+                            "Recovered": 1985484
+                        },
+                        {
+                            "Active": 3524986,
+                            "Confirmed": 5699515,
+                            "Country": "United States of America",
+                            "Date": "2020-08-23",
+                            "Deaths": 176768,
+                            "Recovered": 1997761
+                        },
+                        {
+                            "Active": 3539385,
+                            "Confirmed": 5737369,
+                            "Country": "United States of America",
+                            "Date": "2020-08-24",
+                            "Deaths": 177210,
+                            "Recovered": 2020774
+                        },
+                        {
+                            "Active": 3543450,
+                            "Confirmed": 5775598,
+                            "Country": "United States of America",
+                            "Date": "2020-08-25",
+                            "Deaths": 178449,
+                            "Recovered": 2053699
+                        },
+                        {
+                            "Active": 3556550,
+                            "Confirmed": 5820689,
+                            "Country": "United States of America",
+                            "Date": "2020-08-26",
+                            "Deaths": 179674,
+                            "Recovered": 2084465
+                        },
+                        {
+                            "Active": 3584449,
+                            "Confirmed": 5866560,
+                            "Country": "United States of America",
+                            "Date": "2020-08-27",
+                            "Deaths": 180785,
+                            "Recovered": 2101326
+                        },
+                        {
+                            "Active": 3612633,
+                            "Confirmed": 5912756,
+                            "Country": "United States of America",
+                            "Date": "2020-08-28",
+                            "Deaths": 181756,
+                            "Recovered": 2118367
+                        },
+                        {
+                            "Active": 3635448,
+                            "Confirmed": 5958776,
+                            "Country": "United States of America",
+                            "Date": "2020-08-29",
+                            "Deaths": 182714,
+                            "Recovered": 2140614
+                        },
+                        {
+                            "Active": 3657167,
+                            "Confirmed": 5994130,
+                            "Country": "United States of America",
+                            "Date": "2020-08-30",
+                            "Deaths": 183024,
+                            "Recovered": 2153939
+                        },
+                        {
+                            "Active": 3660220,
+                            "Confirmed": 6028642,
+                            "Country": "United States of America",
+                            "Date": "2020-08-31",
+                            "Deaths": 183597,
+                            "Recovered": 2184825
+                        },
+                        {
+                            "Active": 3683844,
+                            "Confirmed": 6071171,
+                            "Country": "United States of America",
+                            "Date": "2020-09-01",
+                            "Deaths": 184664,
+                            "Recovered": 2202663
+                        },
+                        {
+                            "Active": 3694297,
+                            "Confirmed": 6111774,
+                            "Country": "United States of America",
+                            "Date": "2020-09-02",
+                            "Deaths": 185720,
+                            "Recovered": 2231757
+                        },
+                        {
+                            "Active": 3701945,
+                            "Confirmed": 6155692,
+                            "Country": "United States of America",
+                            "Date": "2020-09-03",
+                            "Deaths": 186790,
+                            "Recovered": 2266957
+                        },
+                        {
+                            "Active": 3734590,
+                            "Confirmed": 6205799,
+                            "Country": "United States of America",
+                            "Date": "2020-09-04",
+                            "Deaths": 187755,
+                            "Recovered": 2283454
+                        },
+                        {
+                            "Active": 3759125,
+                            "Confirmed": 6249850,
+                            "Country": "United States of America",
+                            "Date": "2020-09-05",
+                            "Deaths": 188538,
+                            "Recovered": 2302187
+                        },
+                        {
+                            "Active": 3776045,
+                            "Confirmed": 6280981,
+                            "Country": "United States of America",
+                            "Date": "2020-09-06",
+                            "Deaths": 188941,
+                            "Recovered": 2315995
+                        },
+                        {
+                            "Active": 3782278,
+                            "Confirmed": 6305037,
+                            "Country": "United States of America",
+                            "Date": "2020-09-07",
+                            "Deaths": 189208,
+                            "Recovered": 2333551
+                        },
+                        {
+                            "Active": 3783009,
+                            "Confirmed": 6331773,
+                            "Country": "United States of America",
+                            "Date": "2020-09-08",
+                            "Deaths": 189653,
+                            "Recovered": 2359111
+                        },
+                        {
+                            "Active": 3787000,
+                            "Confirmed": 6365325,
+                            "Country": "United States of America",
+                            "Date": "2020-09-09",
+                            "Deaths": 190846,
+                            "Recovered": 2387479
+                        },
+                        {
+                            "Active": 3806408,
+                            "Confirmed": 6401685,
+                            "Country": "United States of America",
+                            "Date": "2020-09-10",
+                            "Deaths": 191766,
+                            "Recovered": 2403511
+                        },
+                        {
+                            "Active": 3838350,
+                            "Confirmed": 6449207,
+                            "Country": "United States of America",
+                            "Date": "2020-09-11",
+                            "Deaths": 192979,
+                            "Recovered": 2417878
+                        },
+                        {
+                            "Active": 3861979,
+                            "Confirmed": 6490330,
+                            "Country": "United States of America",
+                            "Date": "2020-09-12",
+                            "Deaths": 193693,
+                            "Recovered": 2434658
+                        },
+                        {
+                            "Active": 3879477,
+                            "Confirmed": 6524954,
+                            "Country": "United States of America",
+                            "Date": "2020-09-13",
+                            "Deaths": 194071,
+                            "Recovered": 2451406
+                        },
+                        {
+                            "Active": 3889837,
+                            "Confirmed": 6558900,
+                            "Country": "United States of America",
+                            "Date": "2020-09-14",
+                            "Deaths": 194493,
+                            "Recovered": 2474570
+                        },
+                        {
+                            "Active": 3907183,
+                            "Confirmed": 6598091,
+                            "Country": "United States of America",
+                            "Date": "2020-09-15",
+                            "Deaths": 195781,
+                            "Recovered": 2495127
+                        },
+                        {
+                            "Active": 3914305,
+                            "Confirmed": 6636642,
+                            "Country": "United States of America",
+                            "Date": "2020-09-16",
+                            "Deaths": 196764,
+                            "Recovered": 2525573
+                        },
+                        {
+                            "Active": 3943404,
+                            "Confirmed": 6681372,
+                            "Country": "United States of America",
+                            "Date": "2020-09-17",
+                            "Deaths": 197634,
+                            "Recovered": 2540334
+                        },
+                        {
+                            "Active": 3975053,
+                            "Confirmed": 6730088,
+                            "Country": "United States of America",
+                            "Date": "2020-09-18",
+                            "Deaths": 198570,
+                            "Recovered": 2556465
+                        },
+                        {
+                            "Active": 3997410,
+                            "Confirmed": 6774138,
+                            "Country": "United States of America",
+                            "Date": "2020-09-19",
+                            "Deaths": 199282,
+                            "Recovered": 2577446
+                        },
+                        {
+                            "Active": 4020172,
+                            "Confirmed": 6810352,
+                            "Country": "United States of America",
+                            "Date": "2020-09-20",
+                            "Deaths": 199509,
+                            "Recovered": 2590671
+                        },
+                        {
+                            "Active": 4047002,
+                            "Confirmed": 6862816,
+                            "Country": "United States of America",
+                            "Date": "2020-09-21",
+                            "Deaths": 199865,
+                            "Recovered": 2615949
+                        },
+                        {
+                            "Active": 4054036,
+                            "Confirmed": 6901781,
+                            "Country": "United States of America",
+                            "Date": "2020-09-22",
+                            "Deaths": 200786,
+                            "Recovered": 2646959
+                        },
+                        {
+                            "Active": 4068074,
+                            "Confirmed": 6940214,
+                            "Country": "United States of America",
+                            "Date": "2020-09-23",
+                            "Deaths": 201884,
+                            "Recovered": 2670256
+                        },
+                        {
+                            "Active": 4071365,
+                            "Confirmed": 6984346,
+                            "Country": "United States of America",
+                            "Date": "2020-09-24",
+                            "Deaths": 202798,
+                            "Recovered": 2710183
+                        },
+                        {
+                            "Active": 4103846,
+                            "Confirmed": 7034931,
+                            "Country": "United States of America",
+                            "Date": "2020-09-25",
+                            "Deaths": 203750,
+                            "Recovered": 2727335
+                        },
+                        {
+                            "Active": 4124854,
+                            "Confirmed": 7079803,
+                            "Country": "United States of America",
+                            "Date": "2020-09-26",
+                            "Deaths": 204490,
+                            "Recovered": 2750459
+                        },
+                        {
+                            "Active": 4145189,
+                            "Confirmed": 7116225,
+                            "Country": "United States of America",
+                            "Date": "2020-09-27",
+                            "Deaths": 204756,
+                            "Recovered": 2766280
+                        },
+                        {
+                            "Active": 4149857,
+                            "Confirmed": 7149537,
+                            "Country": "United States of America",
+                            "Date": "2020-09-28",
+                            "Deaths": 205072,
+                            "Recovered": 2794608
+                        },
+                        {
+                            "Active": 4172346,
+                            "Confirmed": 7191637,
+                            "Country": "United States of America",
+                            "Date": "2020-09-29",
+                            "Deaths": 205986,
+                            "Recovered": 2813305
+                        },
+                        {
+                            "Active": 4185422,
+                            "Confirmed": 7233042,
+                            "Country": "United States of America",
+                            "Date": "2020-09-30",
+                            "Deaths": 206932,
+                            "Recovered": 2840688
+                        },
+                        {
+                            "Active": 4209351,
+                            "Confirmed": 7277791,
+                            "Country": "United States of America",
+                            "Date": "2020-10-01",
+                            "Deaths": 207790,
+                            "Recovered": 2860650
+                        },
+                        {
+                            "Active": 4250231,
+                            "Confirmed": 7332297,
+                            "Country": "United States of America",
+                            "Date": "2020-10-02",
+                            "Deaths": 208697,
+                            "Recovered": 2873369
+                        },
+                        {
+                            "Active": 4275635,
+                            "Confirmed": 7382341,
+                            "Country": "United States of America",
+                            "Date": "2020-10-03",
+                            "Deaths": 209384,
+                            "Recovered": 2897322
+                        },
+                        {
+                            "Active": 4296425,
+                            "Confirmed": 7417845,
+                            "Country": "United States of America",
+                            "Date": "2020-10-04",
+                            "Deaths": 209721,
+                            "Recovered": 2911699
+                        },
+                        {
+                            "Active": 4312079,
+                            "Confirmed": 7457402,
+                            "Country": "United States of America",
+                            "Date": "2020-10-05",
+                            "Deaths": 210181,
+                            "Recovered": 2935142
+                        },
+                        {
+                            "Active": 4336065,
+                            "Confirmed": 7499341,
+                            "Country": "United States of America",
+                            "Date": "2020-10-06",
+                            "Deaths": 210886,
+                            "Recovered": 2952390
+                        },
+                        {
+                            "Active": 4337986,
+                            "Confirmed": 7549682,
+                            "Country": "United States of America",
+                            "Date": "2020-10-07",
+                            "Deaths": 211801,
+                            "Recovered": 2999895
+                        }
+                    ],
+                    "location": {
+                        "lat": 38,
+                        "lng": -97
+                    },
+                    "new": {
+                        "active": 1921,
+                        "cases": 50341,
+                        "deaths": 915,
+                        "recovered": 47505
+                    },
+                    "percentages": {
+                        "active": 57.45918834727078,
+                        "fatality": 2.8054294207358668,
+                        "haveRecovered": 39.73538223199335,
+                        "infected": 2.3305299941039737
+                    },
+                    "smoothedNew": {
+                        "cases": 45250.143,
+                        "deaths": 696.143
+                    },
+                    "sources": [
+                        {
+                            "name": "REST Countries",
+                            "url": "https://restcountries.eu/rest/v2/alpha/USA"
+                        },
+                        {
+                            "name": "OWID COVID-19 dataset",
+                            "url": "https://covid.ourworldindata.org/data/owid-covid-data.json"
+                        },
+                        {
+                            "name": "COVID-19 API",
+                            "url": "https://api.covid19api.com/total/country/USA"
+                        }
+                    ],
+                    "testing": {
+                        "newTests": {
+                            "date": "2020-10-04",
+                            "value": 594438
+                        },
+                        "newTestsSmoothed": {
+                            "date": "2020-10-04",
+                            "value": 929589
+                        },
+                        "positiveRate": {
+                            "date": "2020-10-04",
+                            "value": 0.047
+                        },
+                        "totalTests": {
+                            "date": "2020-10-04",
+                            "value": 120674263
+                        }
+                    },
+                    "totals": {
+                        "active": 4337986,
+                        "cases": 7549682,
+                        "deaths": 211801,
+                        "recovered": 2999895
+                    }
+                }
+            },
+            "CaseDataEntry": {
+                "type": "object",
+                "required": [
+                    "Country",
+                    "Confirmed",
+                    "Deaths",
+                    "Recovered",
+                    "Active",
+                    "Date"
+                ],
+                "properties": {
+                    "Country": {
+                        "type": "string"
+                    },
+                    "Confirmed": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "Deaths": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "Recovered": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "Active": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "Date": {
+                        "type": "string"
+                    }
+                }
+            },
+            "RiskFactorStatistics": {
+                "type": "object",
+                "required": [
+                    "country"
+                ],
+                "properties": {
+                    "country": {
+                        "$ref": "#/components/schemas/CountryID"
+                    },
+                    "location": {
+                        "$ref": "#/components/schemas/Location"
+                    },
+                    "populationDensity": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "medianAge": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "aged65Older": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "aged70Older": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "gdpPerCapita": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "gini": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "extremePovertyRate": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "cardiovascDeathRate": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "diabetesPrevalence": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "femaleSmokers": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "maleSmokers": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "hospitalBedsPerThousand": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "lifeExpectancy": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "humanDevelopmentIndex": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "handwashingFacilities": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "sources": {
+                        "$ref": "#/components/schemas/Sources"
+                    }
+                },
+                "example": {
+                    "aged65Older": 15.413,
+                    "aged70Older": 9.732,
+                    "cardiovascDeathRate": 151.089,
+                    "country": {
+                        "codes": {
+                            "alpha2Code": "US",
+                            "alpha3Code": "USA"
+                        },
+                        "name": "United States"
+                    },
+                    "diabetesPrevalence": 10.79,
+                    "extremePovertyRate": 1.2,
+                    "femaleSmokers": 19.1,
+                    "gdpPerCapita": 54225.446,
+                    "gini": 48,
+                    "handwashingFacilities": null,
+                    "hospitalBedsPerThousand": 2.77,
+                    "humanDevelopmentIndex": 0.924,
+                    "lifeExpectancy": 78.86,
+                    "location": {
+                        "lat": 38,
+                        "lng": -97
+                    },
+                    "maleSmokers": 24.6,
+                    "medianAge": 38.3,
+                    "populationDensity": 35.608,
+                    "sources": [
+                        {
+                            "name": "REST Countries",
+                            "url": "https://restcountries.eu/rest/v2/alpha/USA"
+                        },
+                        {
+                            "name": "OWID COVID-19 dataset",
+                            "url": "https://covid.ourworldindata.org/data/owid-covid-data.json"
+                        }
+                    ]
+                }
+            },
+            "CountryID": {
+                "type": "object",
+                "required": [
+                    "codes"
+                ],
+                "properties": {
+                    "codes": {
+                        "type": "object",
+                        "required": [
+                            "alpha2Code",
+                            "alpha3Code"
+                        ],
+                        "properties": {
+                            "alpha2Code": {
+                                "type": "string"
+                            },
+                            "alpha3Code": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "required": [
+                    "error"
+                ],
+                "properties": {
+                    "error": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Sources": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "name",
+                        "url"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "countryAttributes": {
+                "name": "attributes",
+                "in": "query",
+                "description": "Describes the fields to include in the response (other than the required ones). Delimit the fields with a comma if there are multiple. If this parameter is omitted, all fields will be returned.",
+                "explode": false,
+                "required": false,
+                "schema": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Country attributes",
+                        "enum": [
+                            "name",
+                            "codes",
+                            "callingCodes",
+                            "capital",
+                            "alternateNames",
+                            "region",
+                            "population",
+                            "location",
+                            "area",
+                            "timezones",
+                            "borders",
+                            "currencies",
+                            "languages",
+                            "flag",
+                            "regionalBlocs",
+                            "news",
+                            "sources"
+                        ],
+                        "example": "location"
+                    }
+                }
+            },
+            "caseStatsAttributes": {
+                "name": "attributes",
+                "in": "query",
+                "description": "Describes the fields to include in the response (other than the required ones). Delimit the fields with a comma if there are multiple. If this parameter is omitted, all fields will be returned.",
+                "explode": false,
+                "required": false,
+                "schema": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Case statistics attributes",
+                        "enum": [
+                            "country",
+                            "location",
+                            "date",
+                            "totals",
+                            "new",
+                            "smoothedNew",
+                            "percentages",
+                            "derivativeNew",
+                            "history",
+                            "sources",
+                            "testing"
+                        ],
+                        "example": "smoothedNew"
+                    }
+                }
+            },
+            "riskFactorStatsAttributes": {
+                "name": "attributes",
+                "in": "query",
+                "description": "Describes the fields to include in the response (other than the required ones). Delimit the fields with a comma if there are multiple. If this parameter is omitted, all fields will be returned.",
+                "explode": false,
+                "required": false,
+                "schema": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Risk factor statistics attributes",
+                        "enum": [
+                            "country",
+                            "location",
+                            "populationDensity",
+                            "medianAge",
+                            "aged65Older",
+                            "aged70Older",
+                            "gdpPerCapita",
+                            "gini",
+                            "extremePovertyRate",
+                            "cardiovascDeathRate",
+                            "diabetesPrevalence",
+                            "femaleSmokers",
+                            "maleSmokers",
+                            "hospitalBedsPerThousand",
+                            "lifeExpectancy",
+                            "humanDevelopmentIndex",
+                            "handwashingFacilities",
+                            "sources"
+                        ],
+                        "example": "diabetesPrevalence"
+                    }
+                }
+            },
+            "query": {
+                "name": "query",
+                "in": "query",
+                "description": "Query to use in a search.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "countryID": {
+                "name": "identifier",
+                "in": "path",
+                "description": "Unique identifier which is used to select data by country. Valid identifiers include alpha codes and the primary country name.",
+                "required": true,
+                "schema": {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "description": "Country name",
+                            "enum": [
+                                "Zimbabwe",
+                                "Singapore",
+                                "Sierra Leone",
+                                "Niger",
+                                "Seychelles",
+                                "Malaysia",
+                                "Bangladesh",
+                                "Sweden",
+                                "Gabon",
+                                "Iceland",
+                                "United Kingdom",
+                                "Angola",
+                                "Jamaica",
+                                "Kazakhstan",
+                                "Finland",
+                                "Cambodia",
+                                "Guyana",
+                                "Ghana",
+                                "United States",
+                                "Sudan",
+                                "Taiwan",
+                                "Japan",
+                                "Montenegro",
+                                "Latvia",
+                                "Iran",
+                                "Australia",
+                                "Botswana",
+                                "Morocco",
+                                "Tajikistan",
+                                "Grenada",
+                                "Central African Republic",
+                                "Somalia",
+                                "Cyprus",
+                                "Cape Verde",
+                                "Yemen",
+                                "Israel",
+                                "South Korea",
+                                "Nicaragua",
+                                "Belgium",
+                                "Congo",
+                                "Bhutan",
+                                "Mali",
+                                "Ecuador",
+                                "Oman",
+                                "Burkina Faso",
+                                "Slovenia",
+                                "Lebanon",
+                                "Mauritius",
+                                "Tunisia",
+                                "Malta",
+                                "Egypt",
+                                "Sri Lanka",
+                                "Swaziland",
+                                "Laos",
+                                "Comoros",
+                                "Portugal",
+                                "Moldova",
+                                "Slovakia",
+                                "Venezuela",
+                                "Czech Republic",
+                                "Western Sahara",
+                                "Colombia",
+                                "Lithuania",
+                                "Uruguay",
+                                "Suriname",
+                                "India",
+                                "Mexico",
+                                "Kyrgyzstan",
+                                "Zambia",
+                                "Georgia",
+                                "Algeria",
+                                "Paraguay",
+                                "Namibia",
+                                "Spain",
+                                "Saint Lucia",
+                                "China",
+                                "Peru",
+                                "Albania",
+                                "Democratic Republic of Congo",
+                                "Jordan",
+                                "Liechtenstein",
+                                "Timor",
+                                "Equatorial Guinea",
+                                "Libya",
+                                "Antigua and Barbuda",
+                                "Djibouti",
+                                "New Zealand",
+                                "Luxembourg",
+                                "Senegal",
+                                "Syria",
+                                "Thailand",
+                                "Mauritania",
+                                "Cameroon",
+                                "Haiti",
+                                "Uganda",
+                                "Ukraine",
+                                "Chad",
+                                "Turkey",
+                                "Sao Tome and Principe",
+                                "Netherlands",
+                                "Papua New Guinea",
+                                "Germany",
+                                "Liberia",
+                                "Malawi",
+                                "Myanmar",
+                                "Brunei",
+                                "Philippines",
+                                "Gambia",
+                                "Serbia",
+                                "Mozambique",
+                                "Andorra",
+                                "Indonesia",
+                                "Afghanistan",
+                                "Austria",
+                                "Uzbekistan",
+                                "Estonia",
+                                "United Arab Emirates",
+                                "Bulgaria",
+                                "Fiji",
+                                "Argentina",
+                                "Iraq",
+                                "Togo",
+                                "Panama",
+                                "Mongolia",
+                                "Switzerland",
+                                "Palestine",
+                                "Saudi Arabia",
+                                "Russia",
+                                "Kuwait",
+                                "Benin",
+                                "Brazil",
+                                "Poland",
+                                "Canada",
+                                "Bolivia",
+                                "Belarus",
+                                "Macedonia",
+                                "Azerbaijan",
+                                "Denmark",
+                                "Romania",
+                                "Nigeria",
+                                "Cote d'Ivoire",
+                                "Maldives",
+                                "Croatia",
+                                "Barbados",
+                                "Kenya",
+                                "Costa Rica",
+                                "Monaco",
+                                "Dominican Republic",
+                                "Pakistan",
+                                "South Africa",
+                                "Guinea",
+                                "Greece",
+                                "Trinidad and Tobago",
+                                "Norway",
+                                "France",
+                                "Guatemala",
+                                "Madagascar",
+                                "Armenia",
+                                "Saint Kitts and Nevis",
+                                "Rwanda",
+                                "Ireland",
+                                "Burundi",
+                                "Belize",
+                                "Bahamas",
+                                "Chile",
+                                "Dominica",
+                                "South Sudan",
+                                "Saint Vincent and the Grenadines",
+                                "Honduras",
+                                "Qatar",
+                                "Nepal",
+                                "Lesotho",
+                                "Italy",
+                                "San Marino",
+                                "Guinea-Bissau",
+                                "Vietnam",
+                                "Cuba",
+                                "El Salvador",
+                                "Hungary",
+                                "Bahrain",
+                                "Vatican",
+                                "Tanzania",
+                                "Ethiopia",
+                                "Eritrea",
+                                "Bosnia and Herzegovina"
+                            ],
+                            "example": "Sweden"
+                        },
+                        {
+                            "type": "string",
+                            "description": "Country alpha2 code",
+                            "enum": [
+                                "ZW",
+                                "SG",
+                                "SL",
+                                "NE",
+                                "SC",
+                                "MY",
+                                "BD",
+                                "SE",
+                                "GA",
+                                "IS",
+                                "GB",
+                                "AO",
+                                "JM",
+                                "KZ",
+                                "FI",
+                                "KH",
+                                "GY",
+                                "GH",
+                                "US",
+                                "SD",
+                                "TW",
+                                "JP",
+                                "ME",
+                                "LV",
+                                "IR",
+                                "AU",
+                                "BW",
+                                "MA",
+                                "TJ",
+                                "GD",
+                                "CF",
+                                "SO",
+                                "CY",
+                                "CV",
+                                "YE",
+                                "IL",
+                                "KR",
+                                "NI",
+                                "BE",
+                                "CG",
+                                "BT",
+                                "ML",
+                                "EC",
+                                "OM",
+                                "BF",
+                                "SI",
+                                "LB",
+                                "MU",
+                                "TN",
+                                "MT",
+                                "EG",
+                                "LK",
+                                "SZ",
+                                "LA",
+                                "KM",
+                                "PT",
+                                "MD",
+                                "SK",
+                                "VE",
+                                "CZ",
+                                "EH",
+                                "CO",
+                                "LT",
+                                "UY",
+                                "SR",
+                                "IN",
+                                "MX",
+                                "KG",
+                                "ZM",
+                                "GE",
+                                "DZ",
+                                "PY",
+                                "NA",
+                                "ES",
+                                "LC",
+                                "CN",
+                                "PE",
+                                "AL",
+                                "CD",
+                                "JO",
+                                "LI",
+                                "TL",
+                                "GQ",
+                                "LY",
+                                "AG",
+                                "DJ",
+                                "NZ",
+                                "LU",
+                                "SN",
+                                "SY",
+                                "TH",
+                                "MR",
+                                "CM",
+                                "HT",
+                                "UG",
+                                "UA",
+                                "TD",
+                                "TR",
+                                "ST",
+                                "NL",
+                                "PG",
+                                "DE",
+                                "LR",
+                                "MW",
+                                "MM",
+                                "BN",
+                                "PH",
+                                "GM",
+                                "RS",
+                                "MZ",
+                                "AD",
+                                "ID",
+                                "AF",
+                                "AT",
+                                "UZ",
+                                "EE",
+                                "AE",
+                                "BG",
+                                "FJ",
+                                "AR",
+                                "IQ",
+                                "TG",
+                                "PA",
+                                "MN",
+                                "CH",
+                                "PS",
+                                "SA",
+                                "RU",
+                                "KW",
+                                "BJ",
+                                "BR",
+                                "PL",
+                                "CA",
+                                "BO",
+                                "BY",
+                                "MK",
+                                "AZ",
+                                "DK",
+                                "RO",
+                                "NG",
+                                "CI",
+                                "MV",
+                                "HR",
+                                "BB",
+                                "KE",
+                                "CR",
+                                "MC",
+                                "DO",
+                                "PK",
+                                "ZA",
+                                "GN",
+                                "GR",
+                                "TT",
+                                "NO",
+                                "FR",
+                                "GT",
+                                "MG",
+                                "AM",
+                                "KN",
+                                "RW",
+                                "IE",
+                                "BI",
+                                "BZ",
+                                "BS",
+                                "CL",
+                                "DM",
+                                "SS",
+                                "VC",
+                                "HN",
+                                "QA",
+                                "NP",
+                                "LS",
+                                "IT",
+                                "SM",
+                                "GW",
+                                "VN",
+                                "CU",
+                                "SV",
+                                "HU",
+                                "BH",
+                                "VA",
+                                "TZ",
+                                "ET",
+                                "ER",
+                                "BA"
+                            ],
+                            "example": "SW"
+                        },
+                        {
+                            "type": "string",
+                            "description": "Country alpha3 code",
+                            "enum": [
+                                "ZWE",
+                                "SGP",
+                                "SLE",
+                                "NER",
+                                "SYC",
+                                "MYS",
+                                "BGD",
+                                "SWE",
+                                "GAB",
+                                "ISL",
+                                "GBR",
+                                "AGO",
+                                "JAM",
+                                "KAZ",
+                                "FIN",
+                                "KHM",
+                                "GUY",
+                                "GHA",
+                                "USA",
+                                "SDN",
+                                "TWN",
+                                "JPN",
+                                "MNE",
+                                "LVA",
+                                "IRN",
+                                "AUS",
+                                "BWA",
+                                "MAR",
+                                "TJK",
+                                "GRD",
+                                "CAF",
+                                "SOM",
+                                "CYP",
+                                "CPV",
+                                "YEM",
+                                "ISR",
+                                "KOR",
+                                "NIC",
+                                "BEL",
+                                "COG",
+                                "BTN",
+                                "MLI",
+                                "ECU",
+                                "OMN",
+                                "BFA",
+                                "SVN",
+                                "LBN",
+                                "MUS",
+                                "TUN",
+                                "MLT",
+                                "EGY",
+                                "LKA",
+                                "SWZ",
+                                "LAO",
+                                "COM",
+                                "PRT",
+                                "MDA",
+                                "SVK",
+                                "VEN",
+                                "CZE",
+                                "ESH",
+                                "COL",
+                                "LTU",
+                                "URY",
+                                "SUR",
+                                "IND",
+                                "MEX",
+                                "KGZ",
+                                "ZMB",
+                                "GEO",
+                                "DZA",
+                                "PRY",
+                                "NAM",
+                                "ESP",
+                                "LCA",
+                                "CHN",
+                                "PER",
+                                "ALB",
+                                "COD",
+                                "JOR",
+                                "LIE",
+                                "TLS",
+                                "GNQ",
+                                "LBY",
+                                "ATG",
+                                "DJI",
+                                "NZL",
+                                "LUX",
+                                "SEN",
+                                "SYR",
+                                "THA",
+                                "MRT",
+                                "CMR",
+                                "HTI",
+                                "UGA",
+                                "UKR",
+                                "TCD",
+                                "TUR",
+                                "STP",
+                                "NLD",
+                                "PNG",
+                                "DEU",
+                                "LBR",
+                                "MWI",
+                                "MMR",
+                                "BRN",
+                                "PHL",
+                                "GMB",
+                                "SRB",
+                                "MOZ",
+                                "AND",
+                                "IDN",
+                                "AFG",
+                                "AUT",
+                                "UZB",
+                                "EST",
+                                "ARE",
+                                "BGR",
+                                "FJI",
+                                "ARG",
+                                "IRQ",
+                                "TGO",
+                                "PAN",
+                                "MNG",
+                                "CHE",
+                                "PSE",
+                                "SAU",
+                                "RUS",
+                                "KWT",
+                                "BEN",
+                                "BRA",
+                                "POL",
+                                "CAN",
+                                "BOL",
+                                "BLR",
+                                "MKD",
+                                "AZE",
+                                "DNK",
+                                "ROU",
+                                "NGA",
+                                "CIV",
+                                "MDV",
+                                "HRV",
+                                "BRB",
+                                "KEN",
+                                "CRI",
+                                "MCO",
+                                "DOM",
+                                "PAK",
+                                "ZAF",
+                                "GIN",
+                                "GRC",
+                                "TTO",
+                                "NOR",
+                                "FRA",
+                                "GTM",
+                                "MDG",
+                                "ARM",
+                                "KNA",
+                                "RWA",
+                                "IRL",
+                                "BDI",
+                                "BLZ",
+                                "BHS",
+                                "CHL",
+                                "DMA",
+                                "SSD",
+                                "VCT",
+                                "HND",
+                                "QAT",
+                                "NPL",
+                                "LSO",
+                                "ITA",
+                                "SMR",
+                                "GNB",
+                                "VNM",
+                                "CUB",
+                                "SLV",
+                                "HUN",
+                                "BHR",
+                                "VAT",
+                                "TZA",
+                                "ETH",
+                                "ERI",
+                                "BIH"
+                            ],
+                            "example": "SWE"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "countries",
+            "description": "Related to countries"
+        },
+        {
+            "name": "case-statistics",
+            "description": "Related to COVID-19 case statistics data"
+        },
+        {
+            "name": "risk-factor-statistics",
+            "description": "Related to risk factor statistics data"
+        },
+        {
+            "name": "global-news",
+            "description": "Global news relating to the COVID-19 pandemic"
+        },
+        {
+            "name": "global-stats",
+            "description": "Global statistics for the COVID-19 pandemic"
+        },
+        {
+            "name": "search",
+            "description": "Searching"
+        }
+    ]
+}

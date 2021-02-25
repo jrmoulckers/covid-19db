@@ -1,0 +1,114 @@
+Table Countries {
+  id integer [pk, not null]
+  alternate_names arraystring [not null]
+  area float
+  borders arraystring [not null]
+  calling_codes arraystring [not null]
+  capital_img string [not null]
+  capital_location_lat float [not null]
+  capital_location_lng float [not null]
+  capital_name string [not null]
+  codes_alpha2_code string [unique, not null]
+  codes_alpha3_code string [unique, not null]
+  currencies arrayjson [not null]
+  flag string [not null]
+  languages arrayjson [not null]
+  location_lat float [not null]
+  location_lng float [not null]
+  name string [unique, not null]
+  news arrayjson
+  population biginteger [not null]
+  region_region string [not null]
+  region_subregion string [not null]
+  regional_blocs arrayjson [not null]
+  sources arrayjson [not null]
+  timezones arraystring [not null]
+  search_vector tsvectortype
+}
+
+Ref: Countries.codes_alpha2_code - CaseStatistics.country_codes_alpha2_code
+Ref: Countries.codes_alpha3_code - CaseStatistics.country_codes_alpha3_code
+Ref: Countries.location_lat - CaseStatistics.location_lat
+Ref: Countries.location_lng - CaseStatistics.location_lng
+Ref: Countries.name - CaseStatistics.country_name
+Ref: Countries.codes_alpha2_code - RiskFactorStatistics.country_codes_alpha2_code
+Ref: Countries.codes_alpha3_code - RiskFactorStatistics.country_codes_alpha3_code
+Ref: Countries.location_lat - RiskFactorStatistics.location_lat
+Ref: Countries.location_lng - RiskFactorStatistics.location_lng
+Ref: Countries.name - RiskFactorStatistics.country_name
+
+Table CaseStatistics {
+  id integer [pk, not null]
+  country_codes_alpha2_code string [unique, not null]
+  country_codes_alpha3_code string [unique, not null]
+  country_name string [unique, not null]
+  date string [not null]
+  derivative_new_active float [not null]
+  derivative_new_cases float [not null]
+  derivative_new_deaths float [not null]
+  derivative_new_recovered float [not null]
+  history arrayjson [not null]
+  location_lat float [not null]
+  location_lng float [not null]
+  new_active biginteger [not null]
+  new_cases biginteger [not null]
+  new_deaths biginteger [not null]
+  new_recovered biginteger [not null]
+  percentages_active float [not null]
+  percentages_fatality float [not null]
+  percentages_have_recovered float [not null]
+  percentages_infected float [not null]
+  smoothed_new_cases float [not null]
+  smoothed_new_deaths float [not null]
+  sources arrayjson [not null]
+  testing_new_tests json [not null]
+  testing_new_tests_smoothed json [not null]
+  testing_positive_rate json [not null]
+  testing_total_tests json [not null]
+  totals_active biginteger [not null]
+  totals_cases biginteger [not null]
+  totals_deaths biginteger [not null]
+  totals_recovered biginteger [not null]
+}
+
+Table RiskFactorStatistics {
+  id integer [pk, not null]
+  aged_65_older float
+  aged_70_older float
+  cardiovascular_death_rate float
+  country_codes_alpha2_code string [unique, not null]
+  country_codes_alpha3_code string [unique, not null]
+  country_name string [unique, not null]
+  diabetes_prevalence float
+  extreme_poverty_rate float
+  female_smokers float
+  gdp_per_capita float
+  gini float
+  handwashing_facilities float
+  hospital_beds_per_thousand float
+  human_development_index float
+  life_expectancy float
+  location_lat float [not null]
+  location_lng float [not null]
+  male_smokers float
+  median_age float
+  population_density float
+  sources arrayjson [not null]
+}
+
+Table GlobalNews {
+  id integer [pk, not null]
+  news arrayjson [not null]
+}
+
+Table GlobalStats {
+  id integer [pk, not null]
+  total_cases integer [not null]
+  total_deaths integer [not null]
+  total_recovered integer [not null]
+  total_active integer [not null]
+  new_cases integer [not null]
+  new_deaths integer [not null]
+  new_recovered integer [not null]
+  new_active integer [not null]
+}
